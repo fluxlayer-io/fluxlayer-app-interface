@@ -1,0 +1,38 @@
+{
+    "HUBSource": {
+      "1442": {
+        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "transactionHash": ""
+      },
+      "80001": {
+        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "transactionHash": ""
+      },
+      "43113": {
+        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "transactionHash": ""
+      },
+      "5": {
+        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "transactionHash": ""
+      }
+    },
+    "HUBDestination": {
+      "1442": {
+        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "transactionHash": ""
+      },
+      "80001": {
+        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "transactionHash": ""
+      },
+      "43113": {
+        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "transactionHash": ""
+      },
+      "5": {
+        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "transactionHash": ""
+      }
+    }
+  }

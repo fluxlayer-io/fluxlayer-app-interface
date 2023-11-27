@@ -29,6 +29,7 @@ import { updateLimitOrdersRawStateAtom } from '../../state/limitOrdersRawStateAt
 import { limitOrdersSettingsAtom } from '../../state/limitOrdersSettingsAtom'
 import { limitRateAtom } from '../../state/limitRateAtom'
 import { DeadlineInput } from '../DeadlineInput'
+import { TargetNetworkInput } from '../TargetNetworkInput'
 import { LimitOrdersConfirmModal } from '../LimitOrdersConfirmModal'
 import { RateInput } from '../RateInput'
 import { SettingsWidget } from '../SettingsWidget'
@@ -203,6 +204,7 @@ const LimitOrders = React.memo((props: LimitOrdersProps) => {
       <styledEl.RateWrapper>
         <RateInput />
         <DeadlineInput />
+        <TargetNetworkInput />
       </styledEl.RateWrapper>
     ),
     bottomContent: (

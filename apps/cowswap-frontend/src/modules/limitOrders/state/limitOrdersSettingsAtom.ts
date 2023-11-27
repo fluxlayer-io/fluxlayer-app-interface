@@ -7,6 +7,7 @@ import { Milliseconds, Timestamp } from 'types'
 
 import { defaultLimitOrderDeadline } from 'modules/limitOrders/pure/DeadlineSelector/deadlines'
 import { partiallyFillableOverrideAtom } from 'modules/limitOrders/state/partiallyFillableOverride'
+import { defaultTargetNetwork, TargetNetwork} from '../pure/TargetNetworkSelector/deadlines'
 
 export interface LimitOrdersSettingsState {
   readonly expertMode: boolean
@@ -14,6 +15,7 @@ export interface LimitOrdersSettingsState {
   readonly partialFillsEnabled: boolean
   readonly deadlineMilliseconds: Milliseconds
   readonly customDeadlineTimestamp: Timestamp | null
+  readonly targetNetworkNumber: Number
 }
 
 export const defaultLimitOrdersSettings: LimitOrdersSettingsState = {
@@ -21,6 +23,7 @@ export const defaultLimitOrdersSettings: LimitOrdersSettingsState = {
   showRecipient: false,
   partialFillsEnabled: true,
   deadlineMilliseconds: defaultLimitOrderDeadline.value,
+  targetNetworkNumber: defaultTargetNetwork.value,
   customDeadlineTimestamp: null,
 }
 

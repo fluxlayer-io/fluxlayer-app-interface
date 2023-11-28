@@ -23,11 +23,11 @@ export enum UI {
   BOX_SHADOW_NORMAL = '--cow-box-shadow-normal',
 
   // Icons
-  ICON_SIZE_NORMAL = '--cow-icon-size-normal',
-  ICON_SIZE_SMALL = '--cow-icon-size-small',
-  ICON_SIZE_XSMALL = '--cow-icon-size-xsmall',
-  ICON_SIZE_LARGE = '--cow-icon-size-large',
-  ICON_COLOR_NORMAL = '--cow-icon-color-normal',
+  ICON_SIZE_NORMAL = '--ccip-icon-size-normal',
+  ICON_SIZE_SMALL = '--ccip-icon-size-small',
+  ICON_SIZE_XSMALL = '--ccip-icon-size-xsmall',
+  ICON_SIZE_LARGE = '--ccip-icon-size-large',
+  ICON_COLOR_NORMAL = '--ccip-icon-color-normal',
 
   // States
   COLOR_INFORMATION = '--cow-color-information',

@@ -2,7 +2,8 @@ import { COW_PROTOCOL_LINK } from '@cowprotocol/common-const'
 import { ExternalLink } from '@cowprotocol/ui'
 
 import { Trans } from '@lingui/macro'
-import cowIcon from 'assets/logo/cow-icon.svg'
+// import cowIcon from 'assets/logo/cow-icon.svg'
+import CCIPIcon from 'assets/logo/ccip-icon.svg'
 import SVG from 'react-inlinesvg'
 import styled from 'styled-components/macro'
 
@@ -39,8 +40,8 @@ export function PoweredFooter() {
   return (
     <Wrapper>
       <StyledExternalLink href={COW_PROTOCOL_LINK}>
-        <SVG src={cowIcon} title="CoW Protocol" />
-        <Trans>Powered by CoW Protocol</Trans>
+        <SVG src={CCIPIcon} title="Cross Chain Interoperability Protocol" />
+        <Trans>Powered by CCIP Swap</Trans>
       </StyledExternalLink>
     </Wrapper>
   )

@@ -6,6 +6,7 @@ const defaultProps: SettingsProps = {
     showRecipient: false,
     partialFillsEnabled: true,
     deadlineMilliseconds: 200_000,
+    targetNetworkNumber: 5,
     customDeadlineTimestamp: null,
   },
   onStateChanged(state) {

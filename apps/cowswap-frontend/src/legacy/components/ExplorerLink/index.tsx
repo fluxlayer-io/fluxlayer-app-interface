@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 
 import { getExplorerLabel, getEtherscanLink } from '@cowprotocol/common-utils'
 import { getSafeWebUrl } from '@cowprotocol/core'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { ExternalLink } from '@cowprotocol/ui'
 import { useWalletInfo } from '@cowprotocol/wallet'
 

@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
 
 import { getAddress } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { FiatAmount, TokenAmount, TokenSymbol } from '@cowprotocol/ui'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 

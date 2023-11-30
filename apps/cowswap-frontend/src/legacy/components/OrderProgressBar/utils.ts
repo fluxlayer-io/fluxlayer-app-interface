@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 const EXPECTED_EXECUTION_TIME_PERCENTAGE = 75
 
@@ -6,6 +6,9 @@ export const EXPECTED_EXECUTION_TIME: Record<SupportedChainId, number> = {
   [SupportedChainId.MAINNET]: 120,
   [SupportedChainId.GNOSIS_CHAIN]: 50,
   [SupportedChainId.GOERLI]: 50,
+  [SupportedChainId.MUMBAI]: 50,
+  [SupportedChainId.FUJI]: 50,
+  [SupportedChainId.POLYZK_TESTNET]: 50,
 }
 
 const LOG_FUNCTION = Math.log2

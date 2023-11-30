@@ -1,7 +1,7 @@
 import { useAtomValue } from 'jotai'
 import { useCallback } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { permittableTokensAtom } from '../state/permittableTokensAtom'
 import { IsTokenPermittableResult } from '../types'

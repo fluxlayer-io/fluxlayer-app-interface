@@ -4,7 +4,7 @@ import { sendEvent } from '@cowprotocol/analytics'
 import CheckSingular from '@cowprotocol/assets/cow-swap/check-singular.svg'
 import SurplusCow from '@cowprotocol/assets/cow-swap/surplus-cow.svg'
 import twitterImage from '@cowprotocol/assets/cow-swap/twitter.svg'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { FiatAmount, TokenAmount, SymbolElement } from '@cowprotocol/ui'
 import { ExternalLink } from '@cowprotocol/ui'
 

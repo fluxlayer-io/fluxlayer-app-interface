@@ -1,6 +1,6 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { TokensMap } from '../../types'
 import { environmentAtom } from '../environmentAtom'
 import { TokenWithLogo } from '@cowprotocol/common-const'
@@ -10,6 +10,9 @@ export const userAddedTokensAtom = atomWithStorage<Record<SupportedChainId, Toke
   [SupportedChainId.MAINNET]: {},
   [SupportedChainId.GNOSIS_CHAIN]: {},
   [SupportedChainId.GOERLI]: {},
+  [SupportedChainId.MUMBAI]: {},
+  [SupportedChainId.FUJI]: {},
+  [SupportedChainId.POLYZK_TESTNET]: {},
 })
 
 export const userAddedTokensListAtom = atom((get) => {

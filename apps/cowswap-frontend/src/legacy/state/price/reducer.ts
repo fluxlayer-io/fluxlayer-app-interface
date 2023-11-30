@@ -1,5 +1,5 @@
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
+import { OrderKind } from 'ccip-sdk'
 
 import { createReducer, PayloadAction, current } from '@reduxjs/toolkit'
 import { FeeInformation, PriceInformation } from 'types'

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { usePrevious } from '@cowprotocol/common-hooks'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo, switchChain } from '@cowprotocol/wallet'
 import { useWeb3React } from '@web3-react/core'
 

@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId, UID } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId, UID } from 'ccip-sdk'
 
 import { isLocal, isDev, isPr, isStaging, isBarn } from './environments'
 

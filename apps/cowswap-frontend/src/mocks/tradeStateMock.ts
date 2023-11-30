@@ -1,5 +1,5 @@
 import { COW, GNO } from '@cowprotocol/common-const'
-import { OrderClass, OrderKind, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, OrderKind, SupportedChainId } from 'ccip-sdk'
 import { CurrencyAmount, Percent } from '@uniswap/sdk-core'
 
 import { PriceImpact } from 'legacy/hooks/usePriceImpact'

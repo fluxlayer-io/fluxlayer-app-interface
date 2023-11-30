@@ -1,5 +1,5 @@
 import safeLogo from '@cowprotocol/assets/cow-swap/safe-logo.svg'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import styled from 'styled-components/macro'
 

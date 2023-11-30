@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 
 import { renderHook } from '@testing-library/react-hooks'

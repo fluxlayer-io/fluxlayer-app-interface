@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Connector } from '@web3-react/types'
 
 import { TrezorProvider } from './TrezorProvider'

@@ -7,7 +7,7 @@ import cowGraph from '@cowprotocol/assets/images/cow-graph.svg'
 import cowMeditatingSmooth from '@cowprotocol/assets/images/cow-meditating-smoooth.svg'
 import cowMeditatingGraph from '@cowprotocol/assets/images/cow-meditating.svg'
 import { getExplorerOrderLink } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useIsSmartContractWallet } from '@cowprotocol/wallet'
 
 import { useTransition } from '@react-spring/web'

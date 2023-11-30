@@ -7,7 +7,7 @@ import {
   TokenWithLogo,
 } from '@cowprotocol/common-const'
 import { calculateValidTo, getIsNativeToken } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, Percent } from '@uniswap/sdk-core'
 
 import JSBI from 'jsbi'

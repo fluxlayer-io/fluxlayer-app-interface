@@ -14,7 +14,7 @@ import { GnosisSafeInfo, WalletDetails, WalletInfo } from '../api/types'
 import { getWalletType } from '../api/utils/getWalletType'
 import { getWalletTypeLabel } from '../api/utils/getWalletTypeLabel'
 import { useIsSmartContractWallet } from './hooks/useIsSmartContractWallet'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useENSName } from '@cowprotocol/ens'
 
 // Smart contract wallets are filtered out by default, no need to add them to this list

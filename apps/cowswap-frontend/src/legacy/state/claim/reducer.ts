@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { createReducer, current } from '@reduxjs/toolkit'
 
@@ -39,6 +39,9 @@ const DEFAULT_CLAIM_INFO_PER_CHAIN: ClaimInfoPerChain = {
   [SupportedChainId.MAINNET]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.GNOSIS_CHAIN]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.GOERLI]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.MUMBAI]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.FUJI]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.POLYZK_TESTNET]: { ...DEFAULT_CLAIM_INFO },
 }
 
 type ClaimInfoPerAccount = Record<string, ClaimInfoPerChain>

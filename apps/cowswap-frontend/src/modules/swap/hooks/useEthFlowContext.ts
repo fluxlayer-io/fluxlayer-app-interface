@@ -2,7 +2,7 @@ import { useSetAtom } from 'jotai'
 
 import { NATIVE_CURRENCY_BUY_TOKEN } from '@cowprotocol/common-const'
 import { useEthFlowContract } from '@cowprotocol/common-hooks'
-import { OrderKind, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderKind, SupportedChainId } from 'ccip-sdk'
 
 import { useTransactionAdder } from 'legacy/state/enhancedTransactions/hooks'
 

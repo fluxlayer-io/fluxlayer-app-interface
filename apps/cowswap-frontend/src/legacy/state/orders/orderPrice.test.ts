@@ -1,5 +1,5 @@
 import { USDC_MAINNET, WETH_MAINNET } from '@cowprotocol/common-const'
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 import { Price } from '@uniswap/sdk-core'
 
 import { Order } from './actions'

@@ -9,7 +9,7 @@ import {
   calculateValidTo,
   getQuoteUnsupportedToken,
 } from '@cowprotocol/common-utils'
-import { PriceQuality } from '@cowprotocol/cow-sdk'
+import { PriceQuality } from 'ccip-sdk'
 import { useAddUnsupportedToken, useIsUnsupportedToken, useRemoveUnsupportedToken } from '@cowprotocol/tokens'
 
 import { useGetGpPriceStrategy } from 'legacy/hooks/useGetGpPriceStrategy'

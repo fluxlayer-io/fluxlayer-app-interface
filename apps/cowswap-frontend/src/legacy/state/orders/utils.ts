@@ -1,6 +1,6 @@
 import { ONE_HUNDRED_PERCENT, PENDING_ORDERS_BUFFER, ZERO_FRACTION } from '@cowprotocol/common-const'
 import { buildPriceFromCurrencyAmounts } from '@cowprotocol/common-utils'
-import { EnrichedOrder, OrderClass, OrderKind, OrderStatus } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder, OrderClass, OrderKind, OrderStatus } from 'ccip-sdk'
 import { Currency, CurrencyAmount, Percent, Price } from '@uniswap/sdk-core'
 
 import JSBI from 'jsbi'

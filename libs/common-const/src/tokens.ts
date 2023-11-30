@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId, SupportedChainId } from 'ccip-sdk'
 
 import { COW_CONTRACT_ADDRESS, V_COW_CONTRACT_ADDRESS } from './common'
 import { TokenWithLogo } from './types'
@@ -94,6 +94,15 @@ export const GNO_GNOSIS_CHAIN = new TokenWithLogo(
   'Gnosis Token'
 )
 
+// Fuji
+export const USDC_FUJI = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.FUJI,
+  '0x5425890298aed601595a70AB815c96711a31Bc65',
+  6,
+  'USDC',
+  'USD Coin'
+)
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,
@@ -141,6 +150,9 @@ export const USDC: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: USDC_MAINNET,
   [SupportedChainId.GOERLI]: USDC_GOERLI,
   [SupportedChainId.GNOSIS_CHAIN]: USDC_GNOSIS_CHAIN,
+  [SupportedChainId.MUMBAI]: USDC_GOERLI,
+  [SupportedChainId.FUJI]: USDC_FUJI,
+  [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI,
 }
 
 export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedChainId]?: string } } = {
@@ -185,6 +197,9 @@ export const V_COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: V_COW_TOKEN_MAINNET,
   [SupportedChainId.GNOSIS_CHAIN]: V_COW_TOKEN_XDAI,
   [SupportedChainId.GOERLI]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.MUMBAI]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.FUJI]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.POLYZK_TESTNET]: V_COW_TOKEN_GOERLI,
 }
 
 /**
@@ -221,12 +236,18 @@ export const COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: COW_TOKEN_MAINNET,
   [SupportedChainId.GNOSIS_CHAIN]: COW_TOKEN_XDAI,
   [SupportedChainId.GOERLI]: COW_TOKEN_GOERLI,
+  [SupportedChainId.FUJI]: COW_TOKEN_GOERLI,
+  [SupportedChainId.MUMBAI]: COW_TOKEN_GOERLI,
+  [SupportedChainId.POLYZK_TESTNET]: COW_TOKEN_GOERLI,
 }
 
 export const GNO: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: GNO_MAINNET,
   [SupportedChainId.GNOSIS_CHAIN]: GNO_GNOSIS_CHAIN,
   [SupportedChainId.GOERLI]: GNO_GOERLI,
+  [SupportedChainId.FUJI]: GNO_GOERLI,
+  [SupportedChainId.MUMBAI]: GNO_GOERLI,
+  [SupportedChainId.POLYZK_TESTNET]: GNO_GOERLI,
 }
 
 export const EURE_GNOSIS_CHAIN = new TokenWithLogo(

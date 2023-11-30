@@ -1,4 +1,4 @@
-import { EnrichedOrder, OrderClass, OrderKind, OrderStatus, SigningScheme } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder, OrderClass, OrderKind, OrderStatus, SigningScheme } from 'ccip-sdk'
 
 import { TwapOrderItem, TwapOrderStatus } from '../types'
 

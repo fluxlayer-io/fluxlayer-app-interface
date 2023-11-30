@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef } from 'react'
 
 import { NATIVE_CURRENCY_BUY_ADDRESS } from '@cowprotocol/common-const'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { SetIsOrderRefundedBatch } from 'legacy/state/orders/actions'

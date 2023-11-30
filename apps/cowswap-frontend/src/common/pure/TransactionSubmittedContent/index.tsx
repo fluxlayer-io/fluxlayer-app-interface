@@ -1,7 +1,7 @@
 import React from 'react'
 
 import GameIcon from '@cowprotocol/assets/cow-swap/game.gif'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { Currency } from '@uniswap/sdk-core'
 
 import { Link } from 'react-router-dom'

@@ -1,4 +1,4 @@
-import { ALL_SUPPORTED_CHAIN_IDS } from '@cowprotocol/cow-sdk'
+import { ALL_SUPPORTED_CHAIN_IDS } from 'ccip-sdk'
 
 import * as Sentry from '@sentry/browser'
 import BlocknativeSdk from 'bnc-sdk'

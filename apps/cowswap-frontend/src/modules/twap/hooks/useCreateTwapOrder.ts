@@ -4,7 +4,7 @@ import { useCallback } from 'react'
 
 import { twapConversionAnalytics } from '@cowprotocol/analytics'
 import { getCowSoundSend } from '@cowprotocol/common-utils'
-import { OrderClass, OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderClass, OrderKind } from 'ccip-sdk'
 import { useWalletInfo, useSafeAppsSdk } from '@cowprotocol/wallet'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 

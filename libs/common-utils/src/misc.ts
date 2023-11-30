@@ -1,5 +1,5 @@
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { Percent } from '@uniswap/sdk-core'
 
 interface Market<T = string> {

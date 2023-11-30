@@ -1,4 +1,4 @@
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 
 import { Order, OrderStatus } from 'legacy/state/orders/actions'
 

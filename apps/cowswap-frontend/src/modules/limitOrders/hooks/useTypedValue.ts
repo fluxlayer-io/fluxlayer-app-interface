@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 
 import { useLimitOrdersDerivedState } from './useLimitOrdersDerivedState'
 

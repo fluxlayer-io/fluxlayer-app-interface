@@ -9,7 +9,7 @@ import {
   TOKEN_DISTRO_CONTRACT_ADDRESSES,
 } from '@cowprotocol/common-const'
 import { useContract } from '@cowprotocol/common-hooks'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { ContractTransaction } from '@ethersproject/contracts'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'

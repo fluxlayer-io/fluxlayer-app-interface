@@ -1,4 +1,4 @@
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 
 import { AnyAction, Dispatch, MiddlewareAPI } from 'redux'
 import { anything, capture, instance, mock, resetCalls, verify, when } from 'ts-mockito'

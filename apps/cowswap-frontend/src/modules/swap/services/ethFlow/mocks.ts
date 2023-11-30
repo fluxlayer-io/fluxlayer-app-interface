@@ -1,5 +1,5 @@
 import { NATIVE_CURRENCY_BUY_TOKEN, WRAPPED_NATIVE_CURRENCY as WETH } from '@cowprotocol/common-const'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { CurrencyAmount } from '@uniswap/sdk-core'
 
 import { EthFlowActions } from 'modules/swap/containers/EthFlow/hooks/useEthFlowActions'

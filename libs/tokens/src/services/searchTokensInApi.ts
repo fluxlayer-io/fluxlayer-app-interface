@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from 'graphql-request'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 type Address = `0x${string}`
 

@@ -1465,19 +1465,6 @@
   resolved "https://registry.yarnpkg.com/@cowprotocol/cow-runner-game/-/cow-runner-game-0.2.9.tgz#3f94b3f370bd114f77db8b1d238cba3ef4e9d644"
   integrity sha512-rX7HnoV+HYEEkBaqVUsAkGGo0oBrExi+d6Io+8nQZYwZk+IYLmS9jdcIObsLviM2h4YX8+iin6NuKl35AaiHmg==
 
-"@cowprotocol/cow-sdk@^3.0.0-rc.0":
-  version "3.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@cowprotocol/cow-sdk/-/cow-sdk-3.0.0-rc.0.tgz#2583d3726a0f559b2a2faf86ed86261820b93311"
-  integrity sha512-hdAkLKdda7kPXHZxhDKvRo01MbFMHM+WV8okPJL0xgpVsjzQTCitKkitUf3e9kSdyUebdaGe3iWVZviCiI72ew==
-  dependencies:
-    "@cowprotocol/contracts" "^1.4.0"
-    "@ethersproject/abstract-signer" "^5.7.0"
-    "@openzeppelin/merkle-tree" "^1.0.5"
-    cross-fetch "^3.1.5"
-    exponential-backoff "^3.1.1"
-    graphql-request "^4.3.0"
-    limiter "^2.1.0"
-
 "@cowprotocol/ethflowcontract@cowprotocol/ethflowcontract.git#v1.0.0-artifacts":
   version "1.0.0"
   resolved "https://codeload.github.com/cowprotocol/ethflowcontract/tar.gz/2ded2e64f3ee2f543999b312c75c771480b8b636"
@@ -9318,6 +9305,20 @@ cborg@^1.5.4:
   resolved "https://registry.yarnpkg.com/cborg/-/cborg-1.10.2.tgz#83cd581b55b3574c816f82696307c7512db759a1"
   integrity sha512-b3tFPA9pUr2zCUiCfRd2+wok2/LBSNUMKOuRRok+WlvvAgEt/PlbgPTsZUcwCOs53IJvLgTp0eotwtosE6njug==
 
+ccip-sdk@4.0.10:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/ccip-sdk/-/ccip-sdk-4.0.10.tgz#522898b0ad79582e7cf29a4d469b62cd6b676a66"
+  integrity sha512-cMXeKMpCAigZnjjHlGssPBCW6L/RlvTeIMk903zcVMTTbQz7yGT6R1vekCp/48CeEEREMIuLHjsHAocyyvJ89A==
+  dependencies:
+    "@cowprotocol/contracts" "^1.4.0"
+    "@ethersproject/abstract-signer" "^5.7.0"
+    "@openzeppelin/merkle-tree" "^1.0.5"
+    cross-fetch "^3.1.5"
+    exponential-backoff "^3.1.1"
+    graphql "^16.3.0"
+    graphql-request "^4.3.0"
+    limiter "^2.1.0"
+
 chai@^4.3.7:
   version "4.3.7"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.7.tgz#ec63f6df01829088e8bf55fca839bcd464a8ec51"
@@ -13426,6 +13427,11 @@ graphql-request@4.3.0, graphql-request@^4.3.0:
     cross-fetch "^3.1.5"
     extract-files "^9.0.0"
     form-data "^3.0.0"
+
+graphql@^16.3.0:
+  version "16.8.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.8.1.tgz#1930a965bef1170603702acdb68aedd3f3cf6f07"
+  integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
 
 graphql@^16.8.0:
   version "16.8.0"

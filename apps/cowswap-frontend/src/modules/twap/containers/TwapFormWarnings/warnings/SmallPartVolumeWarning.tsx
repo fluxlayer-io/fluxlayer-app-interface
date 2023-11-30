@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { TokenAmount } from '@cowprotocol/ui'
 
 import { InlineBanner } from 'common/pure/InlineBanner'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, Price } from '@uniswap/sdk-core'
 
 import { transparentize } from 'polished'

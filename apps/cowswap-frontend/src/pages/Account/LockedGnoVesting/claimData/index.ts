@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import gnosisChainIndex from './gnosisChain.json'
 import goerliIndex from './goerli.json'
@@ -14,12 +14,18 @@ const indexFiles = {
   [SupportedChainId.MAINNET]: mainnetIndex,
   [SupportedChainId.GNOSIS_CHAIN]: gnosisChainIndex,
   [SupportedChainId.GOERLI]: goerliIndex,
+  [SupportedChainId.FUJI]: goerliIndex,
+  [SupportedChainId.MUMBAI]: goerliIndex,
+  [SupportedChainId.POLYZK_TESTNET]: goerliIndex,
 }
 
 const chainNames = {
   [SupportedChainId.MAINNET]: 'mainnet',
   [SupportedChainId.GNOSIS_CHAIN]: 'gnosisChain',
   [SupportedChainId.GOERLI]: 'goerli',
+  [SupportedChainId.FUJI]: 'fuji',
+  [SupportedChainId.MUMBAI]: 'mumbai',
+  [SupportedChainId.POLYZK_TESTNET]: 'polyzk',
 }
 
 const DISTRO_REPO_BRANCH_NAME = 'main'

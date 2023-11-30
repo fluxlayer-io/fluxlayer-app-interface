@@ -3,7 +3,7 @@ import { useLayoutEffect, useMemo } from 'react'
 
 import { useDebounce } from '@cowprotocol/common-hooks'
 import { onlyResolvesLast } from '@cowprotocol/common-utils'
-import { OrderQuoteResponse } from '@cowprotocol/cow-sdk'
+import { OrderQuoteResponse } from 'ccip-sdk'
 import { useAreUnsupportedTokens } from '@cowprotocol/tokens'
 
 import ms from 'ms.macro'

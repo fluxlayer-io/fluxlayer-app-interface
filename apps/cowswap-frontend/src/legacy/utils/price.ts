@@ -1,5 +1,5 @@
 import { toErc20Address } from '@cowprotocol/common-utils'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { Percent } from '@uniswap/sdk-core'
 
 import BigNumberJs from 'bignumber.js'

@@ -1,5 +1,5 @@
 import { atomWithStorage } from 'jotai/utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { atom } from 'jotai'
 import { environmentAtom } from '../environmentAtom'
 import { UnsupportedTokensState } from '../../types'
@@ -10,6 +10,9 @@ export const unsupportedTokensAtom = atomWithStorage<Record<SupportedChainId, Un
     [SupportedChainId.MAINNET]: {},
     [SupportedChainId.GNOSIS_CHAIN]: {},
     [SupportedChainId.GOERLI]: {},
+    [SupportedChainId.FUJI]: {},
+    [SupportedChainId.MUMBAI]: {},
+    [SupportedChainId.POLYZK_TESTNET]: {},
   }
 )
 

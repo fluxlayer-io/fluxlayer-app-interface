@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react'
 
 import { TokenWithLogo } from '@cowprotocol/common-const'
 import { isTruthy } from '@cowprotocol/common-utils'
-import { OrderClass, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, SupportedChainId } from 'ccip-sdk'
 
 import { useDispatch, useSelector } from 'react-redux'
 

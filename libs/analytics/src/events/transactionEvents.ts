@@ -1,4 +1,4 @@
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 
 import { sendEvent } from '../googleAnalytics'
 import { PixelEvent, sendAllPixels } from '../pixel'

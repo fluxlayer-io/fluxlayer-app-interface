@@ -1,5 +1,5 @@
 import { isEnoughAmount } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, CurrencyAmount, Percent, Token } from '@uniswap/sdk-core'
 
 import { BalancesAndAllowances } from 'modules/tokens'

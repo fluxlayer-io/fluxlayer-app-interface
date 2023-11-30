@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
 
-import { OrderQuoteResponse } from '@cowprotocol/cow-sdk'
+import { OrderQuoteResponse } from 'ccip-sdk'
 
 export const fullAmountQuoteAtom = atom<OrderQuoteResponse | null>(null)

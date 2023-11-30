@@ -1,5 +1,5 @@
 import { ExplorerDataType, getExplorerLink, shortenAddress } from '@cowprotocol/common-utils'
-import { OrderKind, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderKind, SupportedChainId } from 'ccip-sdk'
 import { ExternalLink } from '@cowprotocol/ui'
 import { CurrencyAmount, Fraction, Token } from '@uniswap/sdk-core'
 

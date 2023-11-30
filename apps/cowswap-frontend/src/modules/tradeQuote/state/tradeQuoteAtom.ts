@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithReset } from 'jotai/utils'
 
-import { OrderQuoteResponse } from '@cowprotocol/cow-sdk'
+import { OrderQuoteResponse } from 'ccip-sdk'
 
 import GpQuoteError from 'api/gnosisProtocol/errors/QuoteError'
 

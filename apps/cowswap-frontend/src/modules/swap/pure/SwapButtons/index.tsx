@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 import { NATIVE_CURRENCY_BUY_TOKEN } from '@cowprotocol/common-const'
 import { genericPropsChecker, getWrappedToken } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { AutoRow, ButtonError, ButtonPrimary, ButtonSize, TokenSymbol } from '@cowprotocol/ui'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 

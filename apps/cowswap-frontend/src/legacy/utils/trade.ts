@@ -8,7 +8,7 @@ import {
   SigningScheme,
   SupportedChainId as ChainId,
   UnsignedOrder,
-} from '@cowprotocol/cow-sdk'
+} from 'ccip-sdk'
 import { Signer } from '@ethersproject/abstract-signer'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 

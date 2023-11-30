@@ -1,7 +1,7 @@
 import { SetStateAction } from 'jotai'
 
 import { COW, GNO } from '@cowprotocol/common-const'
-import { OrderClass, OrderKind, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, OrderKind, SupportedChainId } from 'ccip-sdk'
 import { CurrencyAmount } from '@uniswap/sdk-core'
 
 import { getAppData } from 'modules/appData'

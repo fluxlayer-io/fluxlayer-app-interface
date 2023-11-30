@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Fraction, Token } from '@uniswap/sdk-core'
 
 import {
@@ -16,6 +16,9 @@ const coingeckoUnknownCurrencies: Record<SupportedChainId, { [address: string]: 
   [SupportedChainId.MAINNET]: {},
   [SupportedChainId.GNOSIS_CHAIN]: {},
   [SupportedChainId.GOERLI]: {},
+  [SupportedChainId.MUMBAI]: {},
+  [SupportedChainId.FUJI]: {},
+  [SupportedChainId.POLYZK_TESTNET]: {},
 }
 
 function getShouldSkipCoingecko(currency: Token): boolean {

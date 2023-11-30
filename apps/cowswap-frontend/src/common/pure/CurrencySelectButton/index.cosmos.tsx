@@ -1,5 +1,5 @@
 import { COW, GNO } from '@cowprotocol/common-const'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { useSelect } from 'react-cosmos/client'
 

@@ -1,4 +1,4 @@
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
 
 import JSBI from 'jsbi'

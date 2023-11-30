@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { serialize } from '@ethersproject/transactions'
 

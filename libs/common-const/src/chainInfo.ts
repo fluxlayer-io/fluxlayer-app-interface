@@ -1,9 +1,11 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { COW_PROTOCOL_LINK } from './common'
 
 import GnosisChainLogo from '@cowprotocol/assets/cow-swap/network-gnosis-chain-logo.svg'
 import GoerliLogo from '@cowprotocol/assets/cow-swap/network-goerli-logo.svg'
 import EthereumLogo from '@cowprotocol/assets/cow-swap/network-mainnet-logo.svg'
+import AvalancheLogo from '@cowprotocol/assets/cow-swap/network-avalanche-logo.svg'
+import MumbaiLogo from '@cowprotocol/assets/cow-swap/network-mumbai-logo.svg'
 
 export enum NetworkType {
   L1,
@@ -58,6 +60,39 @@ export const CHAIN_INFO: ChainInfoMap = {
     explorerTitle: 'Etherscan',
     logoUrl: GoerliLogo,
     nativeCurrency: { name: 'Görli Ether', symbol: 'görETH', decimals: 18 },
+  },
+  [SupportedChainId.FUJI]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://testnet.snowtrace.io',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Avalanche Fuji',
+    name: 'avalanche_fuji',
+    explorerTitle: 'snowtrace',
+    logoUrl: AvalancheLogo,
+    nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+  },
+  [SupportedChainId.MUMBAI]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://explorer-mumbai.maticvigil.com',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Polygon Mumbai',
+    name: 'polygon_mumbai',
+    explorerTitle: 'maticvigil',
+    logoUrl: MumbaiLogo,
+    nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
+  },
+  [SupportedChainId.POLYZK_TESTNET]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://testnet-zkevm.polygonscan.com/',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Polyzk Testnet',
+    name: 'polyzk_testnet',
+    explorerTitle: 'polygonscan',
+    logoUrl: MumbaiLogo,
+    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   },
   [SupportedChainId.GNOSIS_CHAIN]: {
     networkType: NetworkType.L1,

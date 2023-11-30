@@ -1,5 +1,5 @@
 import { GP_ORDER_UPDATE_INTERVAL } from '@cowprotocol/common-const'
-import { EnrichedOrder } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import useSWR from 'swr'

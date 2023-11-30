@@ -1,5 +1,5 @@
 import { COW, WETH_GOERLI } from '@cowprotocol/common-const'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { CurrencyAmount } from '@uniswap/sdk-core'
 
 import { COMPOSABLE_COW_ADDRESS, CURRENT_BLOCK_FACTORY_ADDRESS } from 'modules/advancedOrders'

@@ -4,7 +4,7 @@ import alertImage from '@cowprotocol/assets/cow-swap/alert-circle.svg'
 import checkImage from '@cowprotocol/assets/cow-swap/check.svg'
 import { NATIVE_CURRENCY_BUY_TOKEN, WRAPPED_NATIVE_CURRENCY } from '@cowprotocol/common-const'
 import { shortenAddress } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { ExternalLink } from '@cowprotocol/ui'
 import {
   getWeb3ReactConnection,

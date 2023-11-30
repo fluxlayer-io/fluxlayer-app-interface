@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import { isTruthy } from '@cowprotocol/common-utils'
 import { Order } from '@cowprotocol/contracts'
-import { OrderParameters, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderParameters, SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { computeOrderUid } from 'utils/orderUtils/computeOrderUid'

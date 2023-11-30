@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
 
-import { EnrichedOrder } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder } from 'ccip-sdk'
 
 export const apiOrdersAtom = atom<EnrichedOrder[]>([])

@@ -1,6 +1,6 @@
 import { CoWSwapEthFlow } from '@cowprotocol/abis'
 import { calculateGasMargin } from '@cowprotocol/common-utils'
-import { OrderClass, UnsignedOrder } from '@cowprotocol/cow-sdk'
+import { OrderClass, UnsignedOrder } from 'ccip-sdk'
 import { ContractTransaction } from '@ethersproject/contracts'
 import { NativeCurrency } from '@uniswap/sdk-core'
 

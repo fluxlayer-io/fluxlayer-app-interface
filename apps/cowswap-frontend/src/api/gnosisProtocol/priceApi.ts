@@ -1,6 +1,6 @@
 import { RAW_CODE_LINK } from '@cowprotocol/common-const'
 import { environmentName } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { GpPriceStrategy } from 'legacy/state/gas/atoms'
 
@@ -14,6 +14,9 @@ function getPriceStrategyUrl(): Record<SupportedChainId, string> {
     [SupportedChainId.MAINNET]: url + '/strategy-1.json',
     [SupportedChainId.GNOSIS_CHAIN]: url + '/strategy-100.json',
     [SupportedChainId.GOERLI]: url + '/strategy-5.json',
+    [SupportedChainId.MUMBAI]: url + '/strategy-80001.json',
+    [SupportedChainId.FUJI]: url + '/strategy-43113.json',
+    [SupportedChainId.POLYZK_TESTNET]: url + '/strategy-1442.json',
   }
 }
 

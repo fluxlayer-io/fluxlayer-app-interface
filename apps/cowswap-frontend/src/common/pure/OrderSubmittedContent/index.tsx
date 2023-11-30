@@ -1,5 +1,5 @@
 import { isCowOrder } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { ButtonPrimary } from '@cowprotocol/ui'
 
 import { Trans } from '@lingui/macro'

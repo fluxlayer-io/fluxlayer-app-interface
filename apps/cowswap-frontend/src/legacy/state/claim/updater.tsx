@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { ClassifiedUserClaims, useClaimDispatchers, useClaimState, useClassifiedUserClaims } from './hooks'

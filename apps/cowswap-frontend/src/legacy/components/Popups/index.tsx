@@ -1,6 +1,6 @@
 import { MouseEvent, useCallback, useRef } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { transparentize } from 'polished'

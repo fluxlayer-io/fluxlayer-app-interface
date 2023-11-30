@@ -2,7 +2,7 @@ import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import useSWR, { SWRConfiguration } from 'swr'
 import { useEffect } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { allListsSourcesAtom, tokenListsUpdatingAtom } from '../../state/tokenLists/tokenListsStateAtom'
 import { fetchTokenList } from '../../services/fetchTokenList'
@@ -18,6 +18,9 @@ const { atom: lastUpdateTimeAtom, updateAtom: updateLastUpdateTimeAtom } = atomW
     [SupportedChainId.MAINNET]: 0,
     [SupportedChainId.GNOSIS_CHAIN]: 0,
     [SupportedChainId.GOERLI]: 0,
+    [SupportedChainId.FUJI]: 0,
+    [SupportedChainId.MUMBAI]: 0,
+    [SupportedChainId.POLYZK_TESTNET]: 0,
   })
 )
 

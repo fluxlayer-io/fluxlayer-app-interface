@@ -1,4 +1,4 @@
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 
 export enum Category {
   TRADE = 'Trade',

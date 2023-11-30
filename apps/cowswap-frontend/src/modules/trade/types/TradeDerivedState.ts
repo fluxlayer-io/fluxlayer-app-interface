@@ -1,4 +1,4 @@
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 
 import { TradeType } from '../hooks/useTradeTypeInfo'

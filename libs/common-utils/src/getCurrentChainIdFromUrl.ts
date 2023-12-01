@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 const chainNameToIdMap: { [key: string]: SupportedChainId } = {
   mainnet: SupportedChainId.MAINNET,

@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 
 import { NavLink } from 'react-router-dom'
@@ -34,6 +34,9 @@ const AMOUNT_LIMIT: Record<SupportedChainId, number> = {
   [SupportedChainId.MAINNET]: 50_000, // $50,000
   [SupportedChainId.GNOSIS_CHAIN]: 500, // $500
   [SupportedChainId.GOERLI]: 100, // $100
+  [SupportedChainId.FUJI]: 100, // $100
+  [SupportedChainId.MUMBAI]: 100, // $100
+  [SupportedChainId.POLYZK_TESTNET]: 100, // $100
 }
 
 export function TwapSuggestionBanner({

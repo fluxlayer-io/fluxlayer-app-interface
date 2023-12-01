@@ -1,4 +1,4 @@
-import { EnrichedOrder } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder } from 'ccip-sdk'
 
 import { OrderStatus } from 'legacy/state/orders/actions'
 import { isOrderCancelled, isOrderExpired, isOrderFulfilled } from 'legacy/state/orders/utils'

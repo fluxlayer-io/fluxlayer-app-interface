@@ -11,7 +11,7 @@ import Sushi from '@cowprotocol/assets/cow-swap/ammslogo/sushi.png'
 import Swapr from '@cowprotocol/assets/cow-swap/ammslogo/swapr.png'
 import Symmetric from '@cowprotocol/assets/cow-swap/ammslogo/symmetric.png'
 import Uniswap from '@cowprotocol/assets/cow-swap/ammslogo/uniswap.png'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import styled from 'styled-components/macro'
 
@@ -68,6 +68,33 @@ const LogosPerNetwork: Record<SupportedChainId, Array<Image>> = {
     ZeroXImage,
   ],
   [SupportedChainId.GOERLI]: [
+    SushiImage,
+    OneInchImage,
+    ParaSwapImage,
+    UniswapImage,
+    CurveImage,
+    MatchaImage,
+    ZeroXImage,
+  ],
+  [SupportedChainId.FUJI]: [
+    SushiImage,
+    OneInchImage,
+    ParaSwapImage,
+    UniswapImage,
+    CurveImage,
+    MatchaImage,
+    ZeroXImage,
+  ],
+  [SupportedChainId.MUMBAI]: [
+    SushiImage,
+    OneInchImage,
+    ParaSwapImage,
+    UniswapImage,
+    CurveImage,
+    MatchaImage,
+    ZeroXImage,
+  ],
+  [SupportedChainId.POLYZK_TESTNET]: [
     SushiImage,
     OneInchImage,
     ParaSwapImage,

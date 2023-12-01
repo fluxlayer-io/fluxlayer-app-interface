@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 /**
  * Convenient method to identify a market so it doesn't matter what is the sell token or buy token.

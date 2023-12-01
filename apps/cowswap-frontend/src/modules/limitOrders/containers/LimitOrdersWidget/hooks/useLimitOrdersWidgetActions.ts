@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 
 import { changeSwapAmountAnalytics } from '@cowprotocol/analytics'
 import { tryParseCurrencyAmount } from '@cowprotocol/common-utils'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 
 import { Field } from 'legacy/state/types'
 

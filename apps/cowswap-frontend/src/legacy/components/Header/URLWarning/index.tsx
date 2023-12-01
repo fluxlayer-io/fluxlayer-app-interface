@@ -1,7 +1,7 @@
 import { useFetchFile } from '@cowprotocol/common-hooks'
 import { hashCode } from '@cowprotocol/common-utils'
 import { environmentName } from '@cowprotocol/common-utils'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { AlertTriangle } from 'react-feather'

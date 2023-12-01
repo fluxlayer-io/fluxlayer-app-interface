@@ -1,5 +1,5 @@
 import { USDC, GNO, ZERO_PERCENT, ONE_HUNDRED_PERCENT, NATIVE_CURRENCY_BUY_TOKEN } from '@cowprotocol/common-const'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 
 import { CLAIMS_REPO, FREE_CLAIM_TYPES, PAID_CLAIM_TYPES } from './const'

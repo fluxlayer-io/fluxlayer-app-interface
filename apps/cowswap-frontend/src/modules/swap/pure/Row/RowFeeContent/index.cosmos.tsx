@@ -1,6 +1,6 @@
 import { COW, GNO } from '@cowprotocol/common-const'
 import { currencyAmountToTokenAmount } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { CurrencyAmount, TradeType, Price } from '@uniswap/sdk-core'
 
 import TradeGp from 'legacy/state/swap/TradeGp'

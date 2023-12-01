@@ -1,5 +1,5 @@
 import { TokenWithLogo } from '@cowprotocol/common-const'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { TokenSearchFromApiResult } from '../services/searchTokensInApi'
 import { isTruthy } from '@cowprotocol/common-utils'

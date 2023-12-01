@@ -1,6 +1,6 @@
 // this file essentially provides all the overrides employed in uniswap-xdai-sdk fork
 // + logic for chainId switch to/from xDAI
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { XDAI_SYMBOL } from '../tokens'
 

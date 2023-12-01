@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId, UID } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId, UID } from 'ccip-sdk'
 
 import { isLocal, isDev, isPr, isStaging, isBarn } from './environments'
 
@@ -19,6 +19,9 @@ function _getExplorerUrlByEnvironment() {
     [ChainId.MAINNET]: baseUrl,
     [ChainId.GOERLI]: `${baseUrl}/goerli`,
     [ChainId.GNOSIS_CHAIN]: `${baseUrl}/gc`,
+    [ChainId.FUJI]: `${baseUrl}/goerli`,
+    [ChainId.MUMBAI]: `${baseUrl}/goerli`,
+    [ChainId.POLYZK_TESTNET]: `${baseUrl}/goerli`,
   }
 }
 

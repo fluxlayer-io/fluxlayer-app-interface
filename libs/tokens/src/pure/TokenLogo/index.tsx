@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 
 import { cowprotocolTokenLogoUrl, NATIVE_CURRENCY_BUY_ADDRESS, TokenWithLogo } from '@cowprotocol/common-const'
 import { uriToHttp } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, NativeCurrency } from '@uniswap/sdk-core'
 
 import { Slash } from 'react-feather'

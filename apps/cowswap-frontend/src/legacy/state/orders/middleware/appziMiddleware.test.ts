@@ -1,5 +1,5 @@
 import { isOrderInPendingTooLong, openNpsAppziSometimes } from '@cowprotocol/common-utils'
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 
 import { AnyAction, Dispatch, MiddlewareAPI } from 'redux'
 import { instance, mock, resetCalls, when } from 'ts-mockito'

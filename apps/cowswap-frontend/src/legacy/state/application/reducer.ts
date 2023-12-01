@@ -1,6 +1,6 @@
 import { DEFAULT_TXN_DISMISS_MS } from '@cowprotocol/common-const'
 import { BlockExplorerLinkType } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { createSlice, nanoid } from '@reduxjs/toolkit'
 import { FlattenInterpolation, ThemeProps, DefaultTheme } from 'styled-components/macro'

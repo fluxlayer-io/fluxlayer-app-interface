@@ -1,4 +1,4 @@
-import { OrderBookApiError } from '@cowprotocol/cow-sdk'
+import { OrderBookApiError } from 'ccip-sdk'
 
 import { ApiErrorObject } from './errors/OperatorError'
 

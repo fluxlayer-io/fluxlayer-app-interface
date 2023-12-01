@@ -1,9 +1,12 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 const chainIdToName: Record<SupportedChainId, string> = {
   [SupportedChainId.MAINNET]: 'ethereum',
   [SupportedChainId.GNOSIS_CHAIN]: 'xdai',
   [SupportedChainId.GOERLI]: 'ethereum',
+  [SupportedChainId.FUJI]: 'avalanchecfuji',
+  [SupportedChainId.MUMBAI]: 'polygonmumbai',
+  [SupportedChainId.POLYZK_TESTNET]: 'polygonzkevm',
 }
 
 export function trustTokenLogoUrl(address: string, chainId: SupportedChainId): string {

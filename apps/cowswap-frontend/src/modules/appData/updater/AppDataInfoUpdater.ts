@@ -1,7 +1,7 @@
 import { useSetAtom } from 'jotai'
 import { useEffect, useRef } from 'react'
 
-import { CowEnv, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { CowEnv, SupportedChainId } from 'ccip-sdk'
 
 import { AppCodeWithWidgetMetadata } from 'modules/injectedWidget/hooks/useAppCodeWidgetAware'
 import { UtmParams } from 'modules/utm'

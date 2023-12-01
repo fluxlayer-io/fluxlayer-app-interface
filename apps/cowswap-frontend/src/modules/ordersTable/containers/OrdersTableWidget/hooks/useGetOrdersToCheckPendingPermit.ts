@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { BalancesAndAllowances } from 'modules/tokens'
 

@@ -4,7 +4,7 @@ import {
   openNpsAppziSometimes,
   timeSinceInSeconds,
 } from '@cowprotocol/common-utils'
-import { OrderClass, SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, SupportedChainId as ChainId } from 'ccip-sdk'
 
 import { isAnyOf } from '@reduxjs/toolkit'
 import { AnyAction, Dispatch, Middleware, MiddlewareAPI } from 'redux'

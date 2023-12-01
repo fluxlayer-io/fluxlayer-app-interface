@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { getWeb3ReactConnection } from '@cowprotocol/wallet'
 import { switchChain } from '@cowprotocol/wallet'
 import { useWeb3React } from '@web3-react/core'

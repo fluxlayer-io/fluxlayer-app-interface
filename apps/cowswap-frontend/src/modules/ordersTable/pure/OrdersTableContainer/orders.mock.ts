@@ -1,6 +1,6 @@
 import { COW, DAI, GNO, USDC } from '@cowprotocol/common-const'
 import { WETH_GOERLI } from '@cowprotocol/common-const'
-import { OrderKind, OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderKind, OrderClass } from 'ccip-sdk'
 
 import { OrderStatus } from 'legacy/state/orders/actions'
 

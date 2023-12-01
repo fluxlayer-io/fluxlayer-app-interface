@@ -1,4 +1,4 @@
-import { ALL_SUPPORTED_CHAIN_IDS, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { ALL_SUPPORTED_CHAIN_IDS, SupportedChainId } from 'ccip-sdk'
 import { Connector } from '@web3-react/types'
 
 import { getWeb3ReactConnection } from './getWeb3ReactConnection'

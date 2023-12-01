@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Connector } from '@web3-react/types'
 
 import { getWeb3ReactConnection } from './getWeb3ReactConnection'
@@ -12,6 +12,12 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
   switch (chainId) {
     case SupportedChainId.MAINNET:
     case SupportedChainId.GOERLI:
+      return [RPC_URLS[chainId]]
+    case SupportedChainId.FUJI:
+      return [RPC_URLS[chainId]]
+    case SupportedChainId.MUMBAI:
+      return [RPC_URLS[chainId]]
+    case SupportedChainId.POLYZK_TESTNET:
       return [RPC_URLS[chainId]]
     case SupportedChainId.GNOSIS_CHAIN:
       return ['https://rpc.gnosischain.com/']

@@ -1,5 +1,5 @@
 import { ListsSourcesByNetwork, TokenListsState } from '../types'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { DEFAULT_TOKENS_LISTS } from '../const/tokensLists'
 
 const MIGRATION_KEY = 'TOKENS_REFACTORING_MIGRATED'
@@ -67,12 +67,18 @@ function migrateLegacyTokenLists() {
     [SupportedChainId.MAINNET]: [],
     [SupportedChainId.GNOSIS_CHAIN]: [],
     [SupportedChainId.GOERLI]: [],
+    [SupportedChainId.MUMBAI]: [],
+    [SupportedChainId.FUJI]: [],
+    [SupportedChainId.POLYZK_TESTNET]: [],
   }
 
   const tokenListsState: TokenListsState = {
     [SupportedChainId.MAINNET]: {},
     [SupportedChainId.GNOSIS_CHAIN]: {},
     [SupportedChainId.GOERLI]: {},
+    [SupportedChainId.FUJI]: {},
+    [SupportedChainId.MUMBAI]: {},
+    [SupportedChainId.POLYZK_TESTNET]: {},
   }
 
   Object.keys(listsState).forEach((chainIdStr) => {

@@ -16,7 +16,7 @@ import {
   SupportedChainId as ChainId,
   TotalSurplus,
   Trade,
-} from '@cowprotocol/cow-sdk'
+} from 'ccip-sdk'
 
 import { orderBookApi } from 'cowSdk'
 

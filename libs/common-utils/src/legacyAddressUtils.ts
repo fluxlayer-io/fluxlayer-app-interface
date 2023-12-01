@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { getAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { Contract, ContractInterface } from '@ethersproject/contracts'
@@ -62,6 +62,9 @@ const ETHERSCAN_URLS: { [chainId in ChainId]: string } = {
   5: 'goerli.etherscan.io',
   // 42: 'kovan.etherscan.io',
   100: 'gnosisscan.io',
+  1442: 'testnet-zkevm.polygonscan.com',
+  80001: 'mumbai.polygonscan.com',
+  43113: 'testnet.snowtrace.io',
 }
 
 export type BlockExplorerLinkType =

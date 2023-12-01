@@ -1,4 +1,4 @@
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 import { SafeMultisigTransactionResponse } from '@safe-global/safe-core-sdk-types'
 
 import { createReducer } from '@reduxjs/toolkit'

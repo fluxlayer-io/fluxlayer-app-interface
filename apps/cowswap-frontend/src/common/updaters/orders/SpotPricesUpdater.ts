@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react'
 
 import { useIsWindowVisible } from '@cowprotocol/common-hooks'
 import { FractionUtils } from '@cowprotocol/common-utils'
-import { OrderClass, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, SupportedChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { Token } from '@uniswap/sdk-core'
 

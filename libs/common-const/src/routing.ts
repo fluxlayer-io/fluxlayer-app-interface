@@ -1,6 +1,6 @@
 // a list of tokens by chain
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency } from '@uniswap/sdk-core'
 
 import {

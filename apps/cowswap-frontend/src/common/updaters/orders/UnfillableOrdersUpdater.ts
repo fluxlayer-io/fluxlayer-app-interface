@@ -6,7 +6,7 @@ import { GP_VAULT_RELAYER, NATIVE_CURRENCY_BUY_ADDRESS, WRAPPED_NATIVE_CURRENCY 
 import { useIsWindowVisible } from '@cowprotocol/common-hooks'
 import { getPromiseFulfilledValue } from '@cowprotocol/common-utils'
 import { timestamp } from '@cowprotocol/contracts'
-import { OrderClass, SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { OrderClass, SupportedChainId as ChainId } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { Currency, CurrencyAmount, Price } from '@uniswap/sdk-core'
 

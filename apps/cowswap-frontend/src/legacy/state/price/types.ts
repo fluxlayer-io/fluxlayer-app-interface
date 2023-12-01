@@ -1,4 +1,4 @@
-import { AppData, AppDataHash, EnrichedOrder, PriceQuality, SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { AppData, AppDataHash, EnrichedOrder, PriceQuality, SupportedChainId as ChainId } from 'ccip-sdk'
 
 type GpPriceStrategy = 'COWSWAP' | 'LEGACY'
 

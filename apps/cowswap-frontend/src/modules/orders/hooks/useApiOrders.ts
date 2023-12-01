@@ -1,6 +1,6 @@
 import { useAtomValue } from 'jotai'
 
-import { EnrichedOrder } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder } from 'ccip-sdk'
 
 import { apiOrdersAtom } from '../state/apiOrdersAtom'
 

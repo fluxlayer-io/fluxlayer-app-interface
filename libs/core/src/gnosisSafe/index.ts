@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { JsonRpcFetchFunc, Web3Provider } from '@ethersproject/providers'
 import SafeApiKit, { SafeInfoResponse } from '@safe-global/api-kit'
 import Safe, { EthersAdapter } from '@safe-global/protocol-kit'
@@ -18,6 +18,9 @@ const CHAIN_SHORT_NAME: Record<SupportedChainId, string> = {
   [SupportedChainId.MAINNET]: 'eth', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-1.json
   [SupportedChainId.GNOSIS_CHAIN]: 'gno', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-100.json
   [SupportedChainId.GOERLI]: 'gor', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
+  [SupportedChainId.MUMBAI]: 'maticmum', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
+  [SupportedChainId.FUJI]: 'Fuji', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
+  [SupportedChainId.POLYZK_TESTNET]: 'testnet-zkEVM-mango', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
 }
 
 const SAFE_TRANSACTION_SERVICE_CACHE: Partial<Record<number, SafeApiKit | null>> = {}

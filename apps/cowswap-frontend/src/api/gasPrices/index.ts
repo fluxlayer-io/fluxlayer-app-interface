@@ -1,5 +1,5 @@
 import { GAS_API_KEYS, GAS_FEE_ENDPOINTS } from '@cowprotocol/common-const'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 
 import { fetchWithRateLimit } from 'common/utils/fetch'
 

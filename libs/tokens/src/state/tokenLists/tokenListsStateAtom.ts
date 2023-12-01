@@ -1,6 +1,6 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { ListsSourcesByNetwork, TokenListsState } from '../../types'
 import { DEFAULT_TOKENS_LISTS } from '../../const/tokensLists'
@@ -10,6 +10,9 @@ export const userAddedListsSourcesAtom = atomWithStorage<ListsSourcesByNetwork>(
   [SupportedChainId.MAINNET]: [],
   [SupportedChainId.GNOSIS_CHAIN]: [],
   [SupportedChainId.GOERLI]: [],
+  [SupportedChainId.MUMBAI]: [],
+  [SupportedChainId.FUJI]: [],
+  [SupportedChainId.POLYZK_TESTNET]: [],
 })
 
 export const allListsSourcesAtom = atom((get) => {
@@ -24,6 +27,9 @@ export const listsStatesByChainAtom = atomWithStorage<TokenListsState>('allToken
   [SupportedChainId.MAINNET]: {},
   [SupportedChainId.GNOSIS_CHAIN]: {},
   [SupportedChainId.GOERLI]: {},
+  [SupportedChainId.MUMBAI]: {},
+  [SupportedChainId.FUJI]: {},
+  [SupportedChainId.POLYZK_TESTNET]: {},
 })
 
 export const tokenListsUpdatingAtom = atom<boolean>(false)

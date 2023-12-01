@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { SafeInfoResponse } from '@safe-global/api-kit'
 
 export enum ConnectionType {

@@ -4,7 +4,7 @@ import { useCallback, useLayoutEffect, useMemo } from 'react'
 import { tryParseCurrencyAmount } from '@cowprotocol/common-utils'
 import { FractionUtils } from '@cowprotocol/common-utils'
 import { getIntOrFloat } from '@cowprotocol/common-utils'
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { Price } from '@uniswap/sdk-core'
 
 import { useLocation, useNavigate } from 'react-router-dom'

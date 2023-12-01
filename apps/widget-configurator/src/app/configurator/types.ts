@@ -1,4 +1,4 @@
-import type { SupportedChainId } from '@cowprotocol/cow-sdk'
+import type { SupportedChainId } from 'ccip-sdk'
 import type { TradeType } from '@cowprotocol/widget-lib'
 
 import { PaletteMode } from '@mui/material'

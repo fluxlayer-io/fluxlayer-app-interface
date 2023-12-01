@@ -1,4 +1,4 @@
-import { EnrichedOrder } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder } from 'ccip-sdk'
 import { TokensByAddress } from '@cowprotocol/tokens'
 
 import { Order } from 'legacy/state/orders/actions'

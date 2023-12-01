@@ -1,4 +1,4 @@
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { PermitHookData, PermitHookParams, PermitInfo } from '@cowprotocol/permit-utils'
 import { Currency } from '@uniswap/sdk-core'
 

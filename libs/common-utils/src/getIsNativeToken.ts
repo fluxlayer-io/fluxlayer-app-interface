@@ -1,5 +1,5 @@
 import { Currency, NativeCurrency } from '@uniswap/sdk-core'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { NATIVE_CURRENCY_BUY_TOKEN } from '@cowprotocol/common-const'
 
 import { doesTokenMatchSymbolOrAddress } from './doesTokenMatchSymbolOrAddress'

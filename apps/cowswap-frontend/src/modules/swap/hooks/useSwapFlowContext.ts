@@ -1,7 +1,7 @@
 import { GP_VAULT_RELAYER } from '@cowprotocol/common-const'
 import { useGP2SettlementContract } from '@cowprotocol/common-hooks'
 import { getWrappedToken } from '@cowprotocol/common-utils'
-import { OrderKind, SupportedChainId } from '@cowprotocol/cow-sdk'
+import { OrderKind, SupportedChainId } from 'ccip-sdk'
 import { TradeType as UniTradeType } from '@uniswap/sdk-core'
 
 import { useGeneratePermitHook, useIsTokenPermittable } from 'modules/permit'

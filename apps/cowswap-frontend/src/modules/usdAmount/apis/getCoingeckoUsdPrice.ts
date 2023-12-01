@@ -1,5 +1,5 @@
 import { FractionUtils } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Fraction, Token } from '@uniswap/sdk-core'
 
 import ms from 'ms.macro'
@@ -16,6 +16,9 @@ export const COINGECK_PLATFORMS: Record<SupportedChainId, string | null> = {
   [SupportedChainId.MAINNET]: 'ethereum',
   [SupportedChainId.GNOSIS_CHAIN]: 'xdai',
   [SupportedChainId.GOERLI]: null,
+  [SupportedChainId.FUJI]: null,
+  [SupportedChainId.MUMBAI]: null,
+  [SupportedChainId.POLYZK_TESTNET]: null,
 }
 
 const BASE_URL = 'https://api.coingecko.com/api/v3/simple/token_price'

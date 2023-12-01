@@ -2,7 +2,7 @@ import { useSetAtom } from 'jotai'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
 
 import { NATIVE_CURRENCY_BUY_TOKEN } from '@cowprotocol/common-const'
-import { EnrichedOrder, EthflowData, OrderClass, SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { EnrichedOrder, EthflowData, OrderClass, SupportedChainId as ChainId } from 'ccip-sdk'
 import { useAllTokens } from '@cowprotocol/tokens'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { Token } from '@uniswap/sdk-core'

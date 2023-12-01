@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { parseUnits } from '@ethersproject/units'
 import { CurrencyAmount, Percent, Token, WETH9 } from '@uniswap/sdk-core'
 

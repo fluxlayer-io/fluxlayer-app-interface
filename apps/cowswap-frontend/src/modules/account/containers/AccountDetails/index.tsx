@@ -7,7 +7,7 @@ import {
   getExplorerAddressLink,
   isMobile,
 } from '@cowprotocol/common-utils'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { MouseoverTooltip } from '@cowprotocol/ui'
 import { ExternalLink } from '@cowprotocol/ui'
 import {

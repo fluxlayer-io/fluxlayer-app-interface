@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { environmentAtom } from '../environmentAtom'
 import {

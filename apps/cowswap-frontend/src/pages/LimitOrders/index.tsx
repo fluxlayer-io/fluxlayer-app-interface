@@ -1,7 +1,7 @@
 import { useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import { useOrders } from 'legacy/state/orders/hooks'

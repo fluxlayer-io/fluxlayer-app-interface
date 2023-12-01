@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { OrderClass } from '@cowprotocol/cow-sdk'
+import { OrderClass } from 'ccip-sdk'
 
 import { useRecentActivity } from 'legacy/hooks/useRecentActivity'
 import { OrderStatus, PENDING_STATES } from 'legacy/state/orders/actions'

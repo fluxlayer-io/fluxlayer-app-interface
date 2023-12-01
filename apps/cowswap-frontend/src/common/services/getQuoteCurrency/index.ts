@@ -1,9 +1,10 @@
 import { DAI, USDC_MAINNET, USDT } from '@cowprotocol/common-const'
 import { NATIVE_CURRENCY_BUY_ADDRESS } from '@cowprotocol/common-const'
 import { DAI_GOERLI, USDT_GOERLI, USDC_GOERLI } from '@cowprotocol/common-const'
+import { USDC_FUJI } from '@cowprotocol/common-const'
 import { USDC_GNOSIS_CHAIN, USDT_GNOSIS_CHAIN, WXDAI } from '@cowprotocol/common-const'
 import { getIsNativeToken } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 
 import { Nullish } from 'types'
@@ -16,6 +17,9 @@ const STABLE_COINS: { [key in SupportedChainId]: string[] } = {
     // XDAI and WXDAI are stable-coins
     .concat(NATIVE_CURRENCY_BUY_ADDRESS),
   [SupportedChainId.GOERLI]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
+  [SupportedChainId.MUMBAI]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
+  [SupportedChainId.FUJI]: [USDC_FUJI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
+  [SupportedChainId.POLYZK_TESTNET]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
 }
 
 /**

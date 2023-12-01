@@ -1,4 +1,4 @@
-import { OrderKind } from '@cowprotocol/cow-sdk'
+import { OrderKind } from 'ccip-sdk'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 
 import { BigNumber } from 'bignumber.js'

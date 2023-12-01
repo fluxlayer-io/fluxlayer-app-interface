@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-import type { SupportedChainId } from '@cowprotocol/cow-sdk'
+import type { SupportedChainId } from 'ccip-sdk'
 
 import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi'
 

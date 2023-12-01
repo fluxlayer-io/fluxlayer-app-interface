@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 
 import { AddPermitTokenParams, PermittableTokens } from '../types'
 
@@ -16,6 +16,9 @@ export const permittableTokensAtom = atomWithStorage<PermittableTokens>('permitt
   [SupportedChainId.MAINNET]: {},
   [SupportedChainId.GOERLI]: {},
   [SupportedChainId.GNOSIS_CHAIN]: {},
+  [SupportedChainId.FUJI]: {},
+  [SupportedChainId.MUMBAI]: {},
+  [SupportedChainId.POLYZK_TESTNET]: {},
 })
 
 /**

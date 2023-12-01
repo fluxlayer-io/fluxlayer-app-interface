@@ -1,4 +1,4 @@
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 
 import { createReducer, PayloadAction } from '@reduxjs/toolkit'
 import { Writable } from 'types'

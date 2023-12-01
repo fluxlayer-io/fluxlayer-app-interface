@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react'
 
 import { GP_VAULT_RELAYER } from '@cowprotocol/common-const'
 import { getIsNativeToken, getWrappedToken } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { getTokenPermitInfo } from '@cowprotocol/permit-utils'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { Currency } from '@uniswap/sdk-core'
@@ -122,6 +122,7 @@ function usePermitInfo(chainId: SupportedChainId, tokenAddress: string | undefin
   return useMemo(() => {
     if (!tokenAddress) return undefined
 
-    return permittableTokens[chainId][tokenAddress.toLowerCase()]
+    const permitInfo = permittableTokens[chainId][tokenAddress.toLowerCase()]
+    return permitInfo ? permitInfo : undefined
   }, [chainId, permittableTokens, tokenAddress])
 }

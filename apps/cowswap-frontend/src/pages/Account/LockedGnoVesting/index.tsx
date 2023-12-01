@@ -15,7 +15,7 @@ import {
   getProviderErrorMessage,
   isRejectRequestProviderError,
 } from '@cowprotocol/common-utils'
-import { SupportedChainId as ChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId as ChainId } from 'ccip-sdk'
 import { ButtonSize, TokenAmount, ButtonPrimary } from '@cowprotocol/ui'
 import { MouseoverTooltipContent } from '@cowprotocol/ui'
 import { useWalletInfo } from '@cowprotocol/wallet'

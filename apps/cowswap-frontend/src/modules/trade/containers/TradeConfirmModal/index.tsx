@@ -1,6 +1,6 @@
 import { useAtomValue } from 'jotai'
 
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { useIsSafeWallet, useWalletInfo } from '@cowprotocol/wallet'
 
 import { PermitModal } from 'common/containers/PermitModal'

@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { OrderSigningUtils } from '@cowprotocol/cow-sdk'
+import { OrderSigningUtils } from 'ccip-sdk'
 import { useWalletInfo } from '@cowprotocol/wallet'
 import { useWeb3React } from '@web3-react/core'
 

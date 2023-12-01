@@ -1,5 +1,5 @@
 import { getEtherscanLink } from '@cowprotocol/common-utils'
-import { SupportedChainId } from '@cowprotocol/cow-sdk'
+import { SupportedChainId } from 'ccip-sdk'
 import { ExternalLink } from '@cowprotocol/ui'
 
 import * as styledEl from './styled'

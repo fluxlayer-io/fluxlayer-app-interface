@@ -1,4 +1,4 @@
-import type { SupportedChainId } from '@cowprotocol/cow-sdk'
+import type { SupportedChainId } from 'ccip-sdk'
 
 export interface JsonRpcRequest {
   id: number

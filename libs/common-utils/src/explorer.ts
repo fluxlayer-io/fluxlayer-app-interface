@@ -19,6 +19,9 @@ function _getExplorerUrlByEnvironment() {
     [ChainId.MAINNET]: baseUrl,
     [ChainId.GOERLI]: `${baseUrl}/goerli`,
     [ChainId.GNOSIS_CHAIN]: `${baseUrl}/gc`,
+    [ChainId.FUJI]: `${baseUrl}/goerli`,
+    [ChainId.MUMBAI]: `${baseUrl}/goerli`,
+    [ChainId.POLYZK_TESTNET]: `${baseUrl}/goerli`,
   }
 }
 

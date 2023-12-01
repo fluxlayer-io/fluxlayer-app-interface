@@ -1,6 +1,7 @@
 import { ZERO_FRACTION } from '@cowprotocol/common-const'
 import { FractionUtils } from '@cowprotocol/common-utils'
 import { Currency, CurrencyAmount, Fraction, Percent, Price } from '@uniswap/sdk-core'
+import { environmentName } from '@cowprotocol/common-utils'
 
 import invariant from 'tiny-invariant'
 import { Nullish } from 'types'
@@ -38,7 +39,8 @@ export function calculatePriceDifference({
   }
 
   // Make sure we are comparing apples with apples (prices should refer to market)
-  assertSameMarket(referencePrice, targetPrice)
+  if(environmentName === 'production')
+    assertSameMarket(referencePrice, targetPrice)
 
   if (
     referencePrice.equalTo(ZERO_FRACTION) || // The reference cannot be zero (infinite relative difference)

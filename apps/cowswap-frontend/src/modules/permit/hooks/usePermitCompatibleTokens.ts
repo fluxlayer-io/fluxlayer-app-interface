@@ -13,22 +13,24 @@ import { PermitCompatibleTokens } from '../types'
 export function usePermitCompatibleTokens(): PermitCompatibleTokens {
   const { chainId } = useWalletInfo()
   const localPermitInfo = useAtomValue(permittableTokensAtom)[chainId]
-  const { allPermitInfo } = usePreGeneratedPermitInfo()
+  const { allPermitInfo, isLoading } = usePreGeneratedPermitInfo()
 
   const isPermitEnabled = useIsPermitEnabled()
-
-  const stableRef = JSON.stringify(Object.keys(localPermitInfo).concat(Object.keys(allPermitInfo)))
 
   const localPermitInfoRef = useRef(localPermitInfo)
   localPermitInfoRef.current = localPermitInfo
   const preGeneratedPermitInfoRef = useRef(allPermitInfo)
   preGeneratedPermitInfoRef.current = allPermitInfo
 
+  let stableRef = ""
+
   return useMemo(() => {
     // Don't deal with permit when it's not enabled
-    if (!isPermitEnabled) {
+    if (!isPermitEnabled || isLoading ) {
       return {}
     }
+
+    stableRef = JSON.stringify(Object.keys(localPermitInfo).concat(Object.keys(allPermitInfo)))
 
     const permitCompatibleTokens: PermitCompatibleTokens = {}
 

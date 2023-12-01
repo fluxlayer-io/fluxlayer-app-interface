@@ -122,6 +122,7 @@ function usePermitInfo(chainId: SupportedChainId, tokenAddress: string | undefin
   return useMemo(() => {
     if (!tokenAddress) return undefined
 
-    return permittableTokens[chainId][tokenAddress.toLowerCase()]
+    const permitInfo = permittableTokens[chainId][tokenAddress.toLowerCase()]
+    return permitInfo ? permitInfo : undefined
   }, [chainId, permittableTokens, tokenAddress])
 }

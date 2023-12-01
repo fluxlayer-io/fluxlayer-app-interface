@@ -15,6 +15,9 @@ import {
   WETH_GNOSIS_CHAIN,
   DAI_GOERLI,
   USDC_GOERLI,
+  LINK_GOERLI,
+  LINK_FUJI,
+  USDC_FUJI,
 } from './tokens'
 import { WRAPPED_NATIVE_CURRENCY } from './nativeAndWrappedTokens'
 
@@ -39,6 +42,13 @@ export const COMMON_BASES: ChainCurrencyList = {
     COW[SupportedChainId.GOERLI],
     DAI_GOERLI,
     USDC_GOERLI,
+    LINK_GOERLI,
+  ],
+  [SupportedChainId.FUJI]: [
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.FUJI],
+    COW[SupportedChainId.FUJI],
+    LINK_FUJI,
+    USDC_FUJI,
   ],
   [SupportedChainId.GNOSIS_CHAIN]: [
     USDC_GNOSIS_CHAIN,

@@ -3,7 +3,6 @@ import { TokensMap } from '../types'
 import {
   COW,
   DAI,
-  DAI_GOERLI,
   EURE_GNOSIS_CHAIN,
   TokenWithLogo,
   USDC_GNOSIS_CHAIN,
@@ -15,9 +14,9 @@ import {
   WETH_GNOSIS_CHAIN,
   WRAPPED_NATIVE_CURRENCY,
   USDC_FUJI,
-  WAVAX_FUJI,
-  WMATIC_MUMBAI,
-  WETH_GOERLI
+  LINK_FUJI,
+  WETH_GOERLI,
+  LINK_GOERLI
 } from '@cowprotocol/common-const'
 
 const tokensListToMap = (list: TokenWithLogo[]) =>
@@ -53,14 +52,14 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
   [SupportedChainId.GOERLI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.GOERLI],
     COW[SupportedChainId.GOERLI],
-    WETH_GOERLI,
     USDC_GOERLI,
+    LINK_GOERLI
   ]),
   [SupportedChainId.FUJI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.FUJI],
     COW[SupportedChainId.FUJI],
-    WAVAX_FUJI,
     USDC_FUJI,
+    LINK_FUJI
   ]),
   [SupportedChainId.MUMBAI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.MUMBAI],

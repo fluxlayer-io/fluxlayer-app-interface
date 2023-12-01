@@ -81,9 +81,9 @@ export const GP_VAULT_RELAYER: Record<number, string> = {
   [ChainId.MAINNET]: GPv2VaultRelayer[ChainId.MAINNET].address,
   [ChainId.GNOSIS_CHAIN]: GPv2VaultRelayer[ChainId.GNOSIS_CHAIN].address,
   [ChainId.GOERLI]: GPv2VaultRelayer[ChainId.GOERLI].address,
-  [ChainId.MUMBAI]: GPv2VaultRelayer[ChainId.GOERLI].address,
-  [ChainId.FUJI]: GPv2VaultRelayer[ChainId.GOERLI].address,
-  [ChainId.POLYZK_TESTNET]: GPv2VaultRelayer[ChainId.GOERLI].address,
+  [ChainId.MUMBAI]: GPv2VaultRelayer[ChainId.MUMBAI].address,
+  [ChainId.FUJI]: GPv2VaultRelayer[ChainId.FUJI].address,
+  [ChainId.POLYZK_TESTNET]: GPv2VaultRelayer[ChainId.POLYZK_TESTNET].address,
 }
 
 export const V_COW_CONTRACT_ADDRESS: Record<number, string> = {

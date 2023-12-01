@@ -50,6 +50,15 @@ const GNO_MAINNET = new TokenWithLogo(
   'Gnosis'
 )
 
+const LINK_MAINNET = new TokenWithLogo(
+  cowprotocolTokenLogoUrl('0x514910771AF9Ca656af840dff83E8264EcF986CA', SupportedChainId.MAINNET),
+  SupportedChainId.MAINNET,
+  '0x514910771AF9Ca656af840dff83E8264EcF986CA',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
 // Gnosis chain
 export const XDAI_SYMBOL = 'XDAI'
 export const XDAI_NAME = 'xDai'
@@ -103,6 +112,15 @@ export const USDC_FUJI = new TokenWithLogo(
   'USDC',
   'USD Coin'
 )
+export const LINK_FUJI = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.FUJI,
+  '0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,
@@ -144,6 +162,15 @@ const GNO_GOERLI = new TokenWithLogo(
   18,
   'GNO',
   'Gnosis'
+)
+
+export const LINK_GOERLI = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.GOERLI,
+  '0x326C977E6efc84E512bB9C30f76E30c160eD06FB',
+  18,
+  'LINK',
+  'Chainlink Token'
 )
 
 export const USDC: Record<SupportedChainId, TokenWithLogo> = {

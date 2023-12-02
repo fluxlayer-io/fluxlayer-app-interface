@@ -83,10 +83,11 @@ export async function swapFlow(
     tradeFlowAnalytics.sign(input.swapFlowAnalyticsContext)
   } catch (error: any) {
     logTradeFlow('SWAP FLOW', 'STEP 8: ERROR: ', error)
-    const swapErrorMessage = getSwapErrorMessage(error)
-
-    tradeFlowAnalytics.error(error, swapErrorMessage, input.swapFlowAnalyticsContext)
-
-    input.swapConfirmManager.setSwapError(swapErrorMessage)
+    console.error(error)
+    // const swapErrorMessage = getSwapErrorMessage(error)
+    //
+    // tradeFlowAnalytics.error(error, swapErrorMessage, input.swapFlowAnalyticsContext)
+    //
+    // input.swapConfirmManager.setSwapError(swapErrorMessage)
   }
 }

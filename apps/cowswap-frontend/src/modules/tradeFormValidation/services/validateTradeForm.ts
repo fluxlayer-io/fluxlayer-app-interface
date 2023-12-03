@@ -27,9 +27,9 @@ export function validateTradeForm(context: TradeFormValidationContext): TradeFor
 
   const inputAmountIsNotSet = !inputCurrencyAmount || isFractionFalsy(inputCurrencyAmount)
 
-  if (!isWrapUnwrap && tradeQuote.error) {
-    return TradeFormValidation.QuoteErrors
-  }
+  // if (!isWrapUnwrap && tradeQuote.error) {
+  //   return TradeFormValidation.QuoteErrors
+  // }
 
   if (!isSwapUnsupported && !account) {
     return TradeFormValidation.WalletNotConnected
@@ -60,18 +60,18 @@ export function validateTradeForm(context: TradeFormValidationContext): TradeFor
       return TradeFormValidation.CurrencyNotSupported
     }
 
-    if (!tradeQuote.response) {
-      return TradeFormValidation.QuoteLoading
-    }
+    // if (!tradeQuote.response) {
+    //   return TradeFormValidation.QuoteLoading
+    // }
   }
 
-  if (!inputCurrencyBalance) {
-    return TradeFormValidation.BalancesNotLoaded
-  }
+  // if (!inputCurrencyBalance) {
+  //   return TradeFormValidation.BalancesNotLoaded
+  // }
 
-  if (inputCurrencyBalance.lessThan(inputCurrencyAmount)) {
-    return TradeFormValidation.BalanceInsufficient
-  }
+  // if (inputCurrencyBalance.lessThan(inputCurrencyAmount)) {
+  //   return TradeFormValidation.BalanceInsufficient
+  // }
 
   if (isWrapUnwrap) {
     return TradeFormValidation.WrapUnwrapFlow

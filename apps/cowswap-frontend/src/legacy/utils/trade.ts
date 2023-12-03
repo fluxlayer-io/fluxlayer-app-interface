@@ -205,7 +205,6 @@ function _getOrderStatus(allowsOffchainSigning: boolean, isOnChain: boolean | un
 }
 
 export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnserialisedPendingOrderParams> {
-  console.warn('signAndPostOrder is executing')
   const { chainId, account, signer, allowsOffchainSigning, appData } = params
 
   // Prepare order
@@ -244,7 +243,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   // )
 
   // Contract addresses
-  const HUBSourceAddress = '0x55C4A21c42859a0f15dAa2C25f6e67617c13930E';
+  const HUBSourceAddress = '0xF9C32eb91aFa23A2fA4656A3a30611EEd3155F12';
 
   // Contract ABI (Replace this with the actual ABI for HUBSource contract)
   const HUBSourceABI = abi;
@@ -254,6 +253,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
 
   console.log('appData.fullAppData', appData.fullAppData);
   console.log('params', params);
+  console.log('getSignOrderParams(params)', getSignOrderParams(params));
 
   // Create Order object
   const contractParam: object = {
@@ -262,13 +262,13 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     takerToken: unsignedOrder.buyToken,
     takerAmount: unsignedOrder.buyAmount,
     maker: await signer.getAddress(),
-    expiry: 1800537678,
+    expiry: unsignedOrder.validTo,
     taker: ethers.constants.AddressZero,
     salt: Date.now(),
-    targetChainId: 80001,
-    target: await signer.getAddress(),
+    targetChainId: params.buyToken.chainId, // TODO possible hidden bug: value always 5
+    target: unsignedOrder.receiver,
     permitSignature: signature
-    // appData.fullAppData.hooks.pre.callData
+    // TODO appData.fullAppData.hooks.pre.callData: hooks not exist
   };
 
   // Call the contract
@@ -276,7 +276,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   await tx.wait(); // Wait for the transaction to be mined
   alert('Order created successfully!');
 
-  const orderId = '';
+  const orderId = ''; // TODO Will jump to blank page if returning empty order id
 
   const pendingOrderParams: Order = mapUnsignedOrderToOrder({
     unsignedOrder,

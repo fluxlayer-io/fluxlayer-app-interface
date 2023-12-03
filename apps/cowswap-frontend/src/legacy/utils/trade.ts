@@ -4,11 +4,11 @@ import { Signer } from '@ethersproject/abstract-signer'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 
 import {
-  EcdsaSigningScheme,
+  // EcdsaSigningScheme,
   OrderClass,
   OrderKind,
   OrderSigningUtils,
-  SigningScheme,
+  // SigningScheme,
   SupportedChainId as ChainId,
   UnsignedOrder,
 } from 'ccip-sdk'
@@ -211,18 +211,19 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   const { summary, quoteId, order: unsignedOrder } = getSignOrderParams(params)
   const receiver = unsignedOrder.receiver
 
-  let signingScheme: SigningScheme
-  let signature: string | undefined
+  // let signingScheme: SigningScheme
+  // let signature: string | undefined
+  let signature: string = ""
 
-  if (allowsOffchainSigning) {
-    const signedOrderInfo = await OrderSigningUtils.signOrder(unsignedOrder, chainId, signer)
-    signingScheme =
-      signedOrderInfo.signingScheme === EcdsaSigningScheme.ETHSIGN ? SigningScheme.ETHSIGN : SigningScheme.EIP712
-    signature = signedOrderInfo.signature
-  } else {
-    signingScheme = SigningScheme.PRESIGN
-    signature = account
-  }
+  // if (allowsOffchainSigning) {
+  //   const signedOrderInfo = await OrderSigningUtils.signOrder(unsignedOrder, chainId, signer)
+  //   signingScheme =
+  //     signedOrderInfo.signingScheme === EcdsaSigningScheme.ETHSIGN ? SigningScheme.ETHSIGN : SigningScheme.EIP712
+  //   signature = signedOrderInfo.signature
+  // } else {
+  //   signingScheme = SigningScheme.PRESIGN
+  //   signature = account
+  // }
 
   // if (!signature) throw new Error('Signature is undefined!')
 
@@ -261,12 +262,12 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     makerAmount: unsignedOrder.sellAmount,
     takerToken: unsignedOrder.buyToken,
     takerAmount: unsignedOrder.buyAmount,
-    maker: await signer.getAddress(),
+    maker: account,
     expiry: unsignedOrder.validTo,
     taker: ethers.constants.AddressZero,
     salt: Date.now(),
-    targetChainId: params.buyToken.chainId, // TODO possible hidden bug: value always 5
-    target: unsignedOrder.receiver,
+    targetChainId: params.buyToken.chainId,
+    target: receiver,
     permitSignature: signature
     // TODO appData.fullAppData.hooks.pre.callData: hooks not exist
   };

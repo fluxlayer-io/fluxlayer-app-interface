@@ -12,6 +12,7 @@ import {
   SupportedChainId as ChainId,
   UnsignedOrder,
 } from 'ccip-sdk'
+import networks from 'ccip-sdk/networks.json'
 import { orderBookApi } from 'cowSdk'
 import { ethers } from 'ethers';
 
@@ -44,7 +45,7 @@ export type PostOrderParams = {
   class: OrderClass
   partiallyFillable: boolean
   quoteId?: number
-  targetNetworkNumber?: any
+  targetNetworkNumber?: number
 }
 
 export type UnsignedOrderAdditionalParams = PostOrderParams & {
@@ -215,17 +216,17 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   const signature: string = fullAppData.hooks ? fullAppData.hooks.pre.callData : '0x'
 
   // Contract addresses
-  const HUBSourceAddress = '0xF9C32eb91aFa23A2fA4656A3a30611EEd3155F12';
+  let HUBSourceAddress;
+  if (networks.GPv2VaultRelayer[chainId])
+    HUBSourceAddress = String(networks.GPv2VaultRelayer[chainId]['address']);
+  else
+    throw new Error('This chain ID is not exist in the networks.json file')
 
-  // Contract ABI (Replace this with the actual ABI for HUBSource contract)
+  // Contract ABI
   const HUBSourceABI = abi;
 
   // Connect to the contract using the ABI and contract address
   const HUBSource = new ethers.Contract(HUBSourceAddress, HUBSourceABI, signer);
-
-  console.log('fullAppData',fullAppData);
-  console.log('params', params);
-  console.log('getSignOrderParams(params)', getSignOrderParams(params));
 
   // Create Order object
   const contractParam: object = {
@@ -242,12 +243,9 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     permitSignature: signature
   };
 
-  console.log('contractParam', contractParam);
-
   // Call the contract
   const tx = await HUBSource.createOrder(contractParam);
   const receipt = await tx.wait(); // Wait for the transaction to be mined
-  alert('Order created successfully!');
 
   const orderId = receipt.transactionHash
 

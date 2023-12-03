@@ -28,7 +28,9 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "ccip-sdk": "https://github.com/sydweb3/cow-sdk.git"
+  },
   "devDependencies": {},
   "nx": {}
 }

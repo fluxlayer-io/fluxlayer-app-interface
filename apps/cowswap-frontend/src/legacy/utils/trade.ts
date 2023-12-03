@@ -44,6 +44,7 @@ export type PostOrderParams = {
   class: OrderClass
   partiallyFillable: boolean
   quoteId?: number
+  targetNetworkNumber?: any
 }
 
 export type UnsignedOrderAdditionalParams = PostOrderParams & {
@@ -205,43 +206,13 @@ function _getOrderStatus(allowsOffchainSigning: boolean, isOnChain: boolean | un
 }
 
 export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnserialisedPendingOrderParams> {
-  const { chainId, account, signer, allowsOffchainSigning, appData } = params
+  const { chainId, account, signer, appData, targetNetworkNumber } = params
 
   // Prepare order
-  const { summary, quoteId, order: unsignedOrder } = getSignOrderParams(params)
+  const { summary, order: unsignedOrder } = getSignOrderParams(params)
   const receiver = unsignedOrder.receiver
-
-  // let signingScheme: SigningScheme
-  // let signature: string | undefined
-  let signature: string = ""
-
-  // if (allowsOffchainSigning) {
-  //   const signedOrderInfo = await OrderSigningUtils.signOrder(unsignedOrder, chainId, signer)
-  //   signingScheme =
-  //     signedOrderInfo.signingScheme === EcdsaSigningScheme.ETHSIGN ? SigningScheme.ETHSIGN : SigningScheme.EIP712
-  //   signature = signedOrderInfo.signature
-  // } else {
-  //   signingScheme = SigningScheme.PRESIGN
-  //   signature = account
-  // }
-
-  // if (!signature) throw new Error('Signature is undefined!')
-
-  // Call API
-  // const orderId = await orderBookApi.sendOrder(
-  //   {
-  //     ...unsignedOrder,
-  //     from: account,
-  //     receiver,
-  //     signingScheme,
-  //     // Include the signature
-  //     signature,
-  //     quoteId,
-  //     appData: appData.fullAppData, // We sign the keccak256 hash, but we send the API the full appData string
-  //     appDataHash: appData.appDataKeccak256,
-  //   },
-  //   { chainId }
-  // )
+  const fullAppData = JSON.parse(appData.fullAppData)
+  const signature: string = fullAppData.hooks ? fullAppData.hooks.pre.callData : '0x'
 
   // Contract addresses
   const HUBSourceAddress = '0xF9C32eb91aFa23A2fA4656A3a30611EEd3155F12';
@@ -252,7 +223,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   // Connect to the contract using the ABI and contract address
   const HUBSource = new ethers.Contract(HUBSourceAddress, HUBSourceABI, signer);
 
-  console.log('appData.fullAppData', appData.fullAppData);
+  console.log('fullAppData',fullAppData);
   console.log('params', params);
   console.log('getSignOrderParams(params)', getSignOrderParams(params));
 
@@ -265,19 +236,20 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     maker: account,
     expiry: unsignedOrder.validTo,
     taker: ethers.constants.AddressZero,
-    salt: Date.now(),
-    targetChainId: params.buyToken.chainId,
+    salt: Math.round(Date.now() / 1000),
+    targetChainId: targetNetworkNumber,
     target: receiver,
     permitSignature: signature
-    // TODO appData.fullAppData.hooks.pre.callData: hooks not exist
   };
+
+  console.log('contractParam', contractParam);
 
   // Call the contract
   const tx = await HUBSource.createOrder(contractParam);
-  await tx.wait(); // Wait for the transaction to be mined
+  const receipt = await tx.wait(); // Wait for the transaction to be mined
   alert('Order created successfully!');
 
-  const orderId = ''; // TODO Will jump to blank page if returning empty order id
+  const orderId = receipt.transactionHash
 
   const pendingOrderParams: Order = mapUnsignedOrderToOrder({
     unsignedOrder,

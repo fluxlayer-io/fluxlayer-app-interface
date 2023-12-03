@@ -9,3 +9,7 @@ export function calculateLimitOrdersDeadline(settingsState: LimitOrdersSettingsS
     ? settingsState.customDeadlineTimestamp
     : calculateValidTo(settingsState.deadlineMilliseconds / 1000)
 }
+
+export function getTargetNetworkNumber(settingsState: LimitOrdersSettingsState): number {
+  return Number(settingsState.targetNetworkNumber)
+}

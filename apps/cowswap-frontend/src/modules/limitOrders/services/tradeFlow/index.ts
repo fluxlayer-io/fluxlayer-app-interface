@@ -8,7 +8,10 @@ import { signAndPostOrder } from 'legacy/utils/trade'
 import { LOW_RATE_THRESHOLD_PERCENT } from 'modules/limitOrders/const/trade'
 import { PriceImpactDeclineError, TradeFlowContext } from 'modules/limitOrders/services/types'
 import { LimitOrdersSettingsState } from 'modules/limitOrders/state/limitOrdersSettingsAtom'
-import { calculateLimitOrdersDeadline } from 'modules/limitOrders/utils/calculateLimitOrdersDeadline'
+import {
+  calculateLimitOrdersDeadline,
+  getTargetNetworkNumber
+} from 'modules/limitOrders/utils/calculateLimitOrdersDeadline'
 import { handlePermit } from 'modules/permit'
 import { presignOrderStep } from 'modules/swap/services/swapFlow/steps/presignOrderStep'
 import { addPendingOrderStep } from 'modules/trade/utils/addPendingOrderStep'
@@ -54,6 +57,7 @@ export async function tradeFlow(
   }
 
   const validTo = calculateLimitOrdersDeadline(settingsState)
+  const targetNetworkNumber = getTargetNetworkNumber(settingsState)
 
   try {
     logTradeFlow('LIMIT ORDER FLOW', 'STEP 2: handle permit')
@@ -77,6 +81,7 @@ export async function tradeFlow(
       ...postOrderParams,
       signer: provider.getSigner(),
       validTo,
+      targetNetworkNumber
     })
     logTradeFlow('LIMIT ORDER FLOW', 'STEP 5: add pending order step')
     addPendingOrderStep(
@@ -117,6 +122,10 @@ export async function tradeFlow(
     return orderId
   } catch (error: any) {
     logTradeFlow('LIMIT ORDER FLOW', 'STEP 9: ERROR: ', error)
+
+    console.error(error)
+    alert('Error: ' + error.message)
+
     const swapErrorMessage = getSwapErrorMessage(error)
 
     tradeFlowAnalytics.error(error, swapErrorMessage, swapFlowAnalyticsContext)

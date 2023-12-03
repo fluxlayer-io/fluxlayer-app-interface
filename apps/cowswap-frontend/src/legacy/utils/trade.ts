@@ -1,18 +1,20 @@
 import { RADIX_DECIMAL, NATIVE_CURRENCY_BUY_ADDRESS } from '@cowprotocol/common-const'
 import { isAddress, shortenAddress, formatTokenAmount, formatSymbol, getIsNativeToken } from '@cowprotocol/common-utils'
-import {
-  EcdsaSigningScheme,
-  OrderClass,
-  OrderKind,
-  OrderSigningUtils,
-  SigningScheme,
-  SupportedChainId as ChainId,
-  UnsignedOrder,
-} from 'ccip-sdk'
 import { Signer } from '@ethersproject/abstract-signer'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 
+import {
+  // EcdsaSigningScheme,
+  OrderClass,
+  OrderKind,
+  OrderSigningUtils,
+  // SigningScheme,
+  SupportedChainId as ChainId,
+  UnsignedOrder,
+} from 'ccip-sdk'
+import networks from 'ccip-sdk/networks.json'
 import { orderBookApi } from 'cowSdk'
+import { ethers } from 'ethers';
 
 import { ChangeOrderStatusParams, Order, OrderStatus } from 'legacy/state/orders/actions'
 import { AddUnserialisedPendingOrderParams } from 'legacy/state/orders/hooks'
@@ -21,6 +23,8 @@ import { AppDataInfo } from 'modules/appData'
 
 import { getTrades } from 'api/gnosisProtocol'
 import { getProfileData } from 'api/gnosisProtocol/api'
+
+import abi from '../../../../../abis/HUBsource.abi.json'
 
 export type PostOrderParams = {
   account: string
@@ -41,6 +45,7 @@ export type PostOrderParams = {
   class: OrderClass
   partiallyFillable: boolean
   quoteId?: number
+  targetNetworkNumber?: number
 }
 
 export type UnsignedOrderAdditionalParams = PostOrderParams & {
@@ -202,42 +207,47 @@ function _getOrderStatus(allowsOffchainSigning: boolean, isOnChain: boolean | un
 }
 
 export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnserialisedPendingOrderParams> {
-  const { chainId, account, signer, allowsOffchainSigning, appData } = params
+  const { chainId, account, signer, appData, targetNetworkNumber } = params
 
   // Prepare order
-  const { summary, quoteId, order: unsignedOrder } = getSignOrderParams(params)
+  const { summary, order: unsignedOrder } = getSignOrderParams(params)
   const receiver = unsignedOrder.receiver
+  const fullAppData = JSON.parse(appData.fullAppData)
+  const signature: string = fullAppData.hooks ? fullAppData.hooks.pre.callData : '0x'
 
-  let signingScheme: SigningScheme
-  let signature: string | undefined
+  // Contract addresses
+  let HUBSourceAddress;
+  if (networks.GPv2VaultRelayer[chainId])
+    HUBSourceAddress = String(networks.GPv2VaultRelayer[chainId]['address']);
+  else
+    throw new Error('This chain ID is not exist in the networks.json file')
 
-  if (allowsOffchainSigning) {
-    const signedOrderInfo = await OrderSigningUtils.signOrder(unsignedOrder, chainId, signer)
-    signingScheme =
-      signedOrderInfo.signingScheme === EcdsaSigningScheme.ETHSIGN ? SigningScheme.ETHSIGN : SigningScheme.EIP712
-    signature = signedOrderInfo.signature
-  } else {
-    signingScheme = SigningScheme.PRESIGN
-    signature = account
-  }
+  // Contract ABI
+  const HUBSourceABI = abi;
 
-  if (!signature) throw new Error('Signature is undefined!')
+  // Connect to the contract using the ABI and contract address
+  const HUBSource = new ethers.Contract(HUBSourceAddress, HUBSourceABI, signer);
 
-  // Call API
-  const orderId = await orderBookApi.sendOrder(
-    {
-      ...unsignedOrder,
-      from: account,
-      receiver,
-      signingScheme,
-      // Include the signature
-      signature,
-      quoteId,
-      appData: appData.fullAppData, // We sign the keccak256 hash, but we send the API the full appData string
-      appDataHash: appData.appDataKeccak256,
-    },
-    { chainId }
-  )
+  // Create Order object
+  const contractParam: object = {
+    makerToken: unsignedOrder.sellToken,
+    makerAmount: unsignedOrder.sellAmount,
+    takerToken: unsignedOrder.buyToken,
+    takerAmount: unsignedOrder.buyAmount,
+    maker: account,
+    expiry: unsignedOrder.validTo,
+    taker: ethers.constants.AddressZero,
+    salt: Math.round(Date.now() / 1000),
+    targetChainId: targetNetworkNumber,
+    target: receiver,
+    permitSignature: signature
+  };
+
+  // Call the contract
+  const tx = await HUBSource.createOrder(contractParam);
+  const receipt = await tx.wait(); // Wait for the transaction to be mined
+
+  const orderId = receipt.transactionHash
 
   const pendingOrderParams: Order = mapUnsignedOrderToOrder({
     unsignedOrder,

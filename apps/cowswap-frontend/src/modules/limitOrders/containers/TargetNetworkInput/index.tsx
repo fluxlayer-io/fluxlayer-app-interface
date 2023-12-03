@@ -25,12 +25,12 @@ export function TargetNetworkInput() {
     [updateSettingsState]
   )
 
-  const selectCustomDeadline = useCallback(
-    (customDeadline: number | null) => {
-      updateSettingsState({ customDeadlineTimestamp: customDeadline })
-    },
-    [updateSettingsState]
-  )
+  // const selectCustomDeadline = useCallback(
+  //   (customDeadline: number | null) => {
+  //     updateSettingsState({ customDeadlineTimestamp: customDeadline })
+  //   },
+  //   [updateSettingsState]
+  // )
 
   return (
     <TargetNetworkSelector

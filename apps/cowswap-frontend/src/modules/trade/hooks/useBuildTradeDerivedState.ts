@@ -1,7 +1,8 @@
 import { Atom, useAtomValue } from 'jotai'
 
 import { tryParseFractionalAmount } from '@cowprotocol/common-utils'
-import { useTokenBySymbolOrAddress } from '@cowprotocol/tokens'
+import { useTokenBySymbolOrAddress} from '@cowprotocol/tokens'
+import { useTokenBySymbolOrAddressByNetworkNumber} from '../../../../../../libs/tokens/src/hooks/tokens/useTokenBySymbolOrAddress'
 import { useWalletInfo } from '@cowprotocol/wallet'
 
 import useCurrencyBalance from 'modules/tokens/hooks/useCurrencyBalance'
@@ -19,7 +20,7 @@ export function useBuildTradeDerivedState(stateAtom: Atom<ExtendedTradeRawState>
   const orderKind = rawState.orderKind
 
   const inputCurrency = useTokenBySymbolOrAddress(rawState.inputCurrencyId)
-  const outputCurrency = useTokenBySymbolOrAddress(rawState.outputCurrencyId)
+  const outputCurrency = useTokenBySymbolOrAddressByNetworkNumber(rawState.outputCurrencyId)
   const inputCurrencyAmount = tryParseFractionalAmount(inputCurrency, rawState.inputCurrencyAmount)
   const outputCurrencyAmount = tryParseFractionalAmount(outputCurrency, rawState.outputCurrencyAmount)
   const inputCurrencyBalance = useCurrencyBalance(account, inputCurrency) || null

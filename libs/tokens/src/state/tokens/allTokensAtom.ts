@@ -7,6 +7,7 @@ import { userAddedTokensAtom } from './userAddedTokensAtom'
 import { favouriteTokensAtom } from './favouriteTokensAtom'
 import { listsEnabledStateAtom, listsStatesListAtom } from '../tokenLists/tokenListsStateAtom'
 import { lowerCaseTokensMap } from '../../utils/lowerCaseTokensMap'
+import { limitOrdersSettingsAtom } from '../../../../../apps/cowswap-frontend/src/modules/limitOrders/state/limitOrdersSettingsAtom'
 
 export interface TokensByAddress {
   [address: string]: TokenWithLogo
@@ -76,6 +77,27 @@ export const activeTokensAtom = atom<TokenWithLogo[]>((get) => {
   return tokens
 })
 
+export const activeTokensAtomByTargetNetworkNumber = atom<TokenWithLogo[]>((get) => {
+  // const targetNetworkNumber = SupportedChainId[get(limitOrdersSettingsAtom).targetNetworkNumber]
+  const { targetNetworkNumber } = get(limitOrdersSettingsAtom)
+  // const { chainId } = get(environmentAtom)
+  const userAddedTokens = get(userAddedTokensAtom)
+  const favouriteTokensState = get(favouriteTokensAtom)
+
+  const tokensMap = get(tokensStateAtom)
+  const nativeToken = NATIVE_CURRENCY_BUY_TOKEN[targetNetworkNumber]
+
+  const tokens = tokenMapToListWithLogo({
+    ...tokensMap.activeTokens,
+    ...lowerCaseTokensMap(userAddedTokens[targetNetworkNumber]),
+    ...lowerCaseTokensMap(favouriteTokensState[targetNetworkNumber]),
+  })
+
+  tokens.unshift(nativeToken)
+
+  return tokens
+})
+
 export const inactiveTokensAtom = atom<TokenWithLogo[]>((get) => {
   const tokensMap = get(tokensStateAtom)
 
@@ -91,6 +113,20 @@ export const tokensByAddressAtom = atom<TokensByAddress>((get) => {
 
 export const tokensBySymbolAtom = atom<TokensBySymbol>((get) => {
   return get(activeTokensAtom).reduce<TokensBySymbol>((acc, token) => {
+    if (!token.symbol) return acc
+
+    const symbol = token.symbol.toLowerCase()
+
+    acc[symbol] = acc[symbol] || []
+
+    acc[symbol].push(token)
+
+    return acc
+  }, {})
+})
+
+export const tokensBySymbolAtomByNetworkNumber = atom<TokensBySymbol>((get) => {
+  return get(activeTokensAtomByTargetNetworkNumber).reduce<TokensBySymbol>((acc, token) => {
     if (!token.symbol) return acc
 
     const symbol = token.symbol.toLowerCase()

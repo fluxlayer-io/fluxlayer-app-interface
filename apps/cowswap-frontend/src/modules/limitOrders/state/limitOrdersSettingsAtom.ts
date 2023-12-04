@@ -8,6 +8,7 @@ import { Milliseconds, Timestamp } from 'types'
 import { defaultLimitOrderDeadline } from 'modules/limitOrders/pure/DeadlineSelector/deadlines'
 import { partiallyFillableOverrideAtom } from 'modules/limitOrders/state/partiallyFillableOverride'
 import { defaultTargetNetwork, TargetNetwork} from '../pure/TargetNetworkSelector/deadlines'
+import { SupportedChainId } from 'ccip-sdk'
 
 export interface LimitOrdersSettingsState {
   readonly expertMode: boolean
@@ -15,7 +16,7 @@ export interface LimitOrdersSettingsState {
   readonly partialFillsEnabled: boolean
   readonly deadlineMilliseconds: Milliseconds
   readonly customDeadlineTimestamp: Timestamp | null
-  readonly targetNetworkNumber: Number
+  readonly targetNetworkNumber: SupportedChainId
 }
 
 export const defaultLimitOrdersSettings: LimitOrdersSettingsState = {

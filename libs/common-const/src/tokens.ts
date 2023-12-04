@@ -121,6 +121,24 @@ export const LINK_FUJI = new TokenWithLogo(
   'Chainlink Token'
 )
 
+// Mumbai
+export const USDC_MUMBAI = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.MUMBAI,
+  '0x0FA8781a83E46826621b3BC094Ea2A0212e71B23',
+  6,
+  'USDC',
+  'USD Coin'
+)
+export const LINK_MUMBAI = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.MUMBAI,
+  '0x326C977E6efc84E512bB9C30f76E30c160eD06FB',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,

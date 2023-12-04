@@ -4,19 +4,21 @@ import { SupportedChainId } from 'ccip-sdk'
 
 import { TokensMap } from '../../types'
 import { environmentAtom } from '../environmentAtom'
+import { limitOrdersSettingsAtom } from '../../../../../apps/cowswap-frontend/src/modules/limitOrders/state/limitOrdersSettingsAtom'
 import { TokenWithLogo } from '@cowprotocol/common-const'
 import { DEFAULT_FAVOURITE_TOKENS } from '../../const/defaultFavouriteTokens'
 
-export const favouriteTokensAtom = atomWithStorage<Record<SupportedChainId, TokensMap>>(
+export const favouriteTokensAtom = atomWithStorage<Record<number, TokensMap>>(
   'favouriteTokensAtom:v1',
   DEFAULT_FAVOURITE_TOKENS
 )
 
 export const favouriteTokensListAtom = atom((get) => {
-  const { chainId } = get(environmentAtom)
+  // const { chainId } = get(environmentAtom)
+  const targetNetworkNumber = Number(get(limitOrdersSettingsAtom).targetNetworkNumber)
   const favouriteTokensState = get(favouriteTokensAtom)
 
-  return Object.values(favouriteTokensState[chainId]).map((token) => TokenWithLogo.fromToken(token, token.logoURI))
+  return Object.values(favouriteTokensState[targetNetworkNumber]).map((token) => TokenWithLogo.fromToken(token, token.logoURI))
 })
 
 export const resetFavouriteTokensAtom = atom(null, (get, set) => {

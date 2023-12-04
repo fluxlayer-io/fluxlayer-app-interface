@@ -139,6 +139,16 @@ export const LINK_MUMBAI = new TokenWithLogo(
   'Chainlink Token'
 )
 
+// PolyzkEVM Testnet
+export const LINK_POLYZK_TESTNET = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.POLYZK_TESTNET,
+  '0xa375fEfcA27a639361139718145dffc29A44cB6d',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,

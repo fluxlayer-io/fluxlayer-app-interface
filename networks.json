@@ -1,37 +1,37 @@
 {
     "HUBSource": {
       "1442": {
-        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "address": "0x7D573068bA00964A7Cc7C9E36380E494d406F381",
         "transactionHash": ""
       },
       "80001": {
-        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "address": "0x7D573068bA00964A7Cc7C9E36380E494d406F381",
         "transactionHash": ""
       },
       "43113": {
-        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "address": "0x7D573068bA00964A7Cc7C9E36380E494d406F381",
         "transactionHash": ""
       },
       "5": {
-        "address": "0x55C4A21c42859a0f15dAa2C25f6e67617c13930E",
+        "address": "0x7D573068bA00964A7Cc7C9E36380E494d406F381",
         "transactionHash": ""
       }
     },
     "HUBDestination": {
       "1442": {
-        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "address": "0x0Cb9cf26d4Bc141a066A3AcDf3ff51Be6Fb7899F",
         "transactionHash": ""
       },
       "80001": {
-        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "address": "0x0Cb9cf26d4Bc141a066A3AcDf3ff51Be6Fb7899F",
         "transactionHash": ""
       },
       "43113": {
-        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "address": "0x0Cb9cf26d4Bc141a066A3AcDf3ff51Be6Fb7899F",
         "transactionHash": ""
       },
       "5": {
-        "address": "0x352C8AD43Fb9f0Da22559A3589D1BF9B72fbA4c6",
+        "address": "0x0Cb9cf26d4Bc141a066A3AcDf3ff51Be6Fb7899F",
         "transactionHash": ""
       }
     }

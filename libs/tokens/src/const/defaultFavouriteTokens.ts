@@ -19,6 +19,7 @@ import {
   LINK_GOERLI,
   USDC_MUMBAI,
   LINK_MUMBAI,
+  USDC_POLYZK_TESTNET,
   LINK_POLYZK_TESTNET
 } from '@cowprotocol/common-const'
 
@@ -74,5 +75,6 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.POLYZK_TESTNET],
     COW[SupportedChainId.POLYZK_TESTNET],
     LINK_POLYZK_TESTNET,
+    USDC_POLYZK_TESTNET,
   ]),
 }

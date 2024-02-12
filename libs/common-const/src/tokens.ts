@@ -149,6 +149,14 @@ export const LINK_POLYZK_TESTNET = new TokenWithLogo(
   'Chainlink Token'
 )
 
+export const USDC_POLYZK_TESTNET = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.POLYZK_TESTNET,
+  '0x1693803c8CDeB1bCc3F11891Fdeaa49c14864690',
+  6,
+  'USDC',
+  'USD Coin'
+)
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,
@@ -215,6 +223,9 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.MAINNET]: USDC_MAINNET.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,
     [SupportedChainId.GNOSIS_CHAIN]: USDC_GNOSIS_CHAIN.address,
+    [SupportedChainId.MUMBAI]: USDC_GOERLI.address,
+    [SupportedChainId.FUJI]: USDC_FUJI.address,
+    [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI.address,
   },
 }
 

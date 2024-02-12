@@ -50,9 +50,9 @@ export const WMATIC_MUMBAI = new TokenWithLogo(
   'Wrapped Matic'
 )
 export const WETH_POLYZKTESTNET = new TokenWithLogo(
-  undefined,
+  WETH_MAINNET.logoURI,
   ChainId.POLYZK_TESTNET,
-  '0xd00ae08403B9bbb9124bB305C09058E32C39A48c',
+  '0x2ad78787CCaf7FA8FAe8953FD78ab9163f81DcC8',
   18,
   'WETH',
   'Wrapped Ether'

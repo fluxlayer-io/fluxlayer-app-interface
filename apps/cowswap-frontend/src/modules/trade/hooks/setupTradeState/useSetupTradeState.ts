@@ -177,5 +177,5 @@ export function useSetupTradeState(): void {
    * If user opened a link with some token symbol, and we have more than one token with the same symbol in the listing
    * Then we show alert, reset trade state to default and ask user to select token using UI
    */
-  useResetStateWithSymbolDuplication(state || null)
+  // useResetStateWithSymbolDuplication(state || null)
 }

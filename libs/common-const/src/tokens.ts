@@ -171,7 +171,7 @@ export const USDC_SEPOLIA = new TokenWithLogo(
   USDC_MAINNET.logoURI,
   SupportedChainId.SEPOLIA,
   '0xbe72E441BF55620febc26715db68d3494213D8Cb',
-  6,
+  18,
   'USDC',
   'USD Coin'
 )

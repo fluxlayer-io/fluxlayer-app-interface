@@ -242,6 +242,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     target: receiver,
     permitSignature: signature
   };
+  console.log("contractParam: ", contractParam)
 
   // Call the contract
   const tx = await HUBSource.createOrder(contractParam);

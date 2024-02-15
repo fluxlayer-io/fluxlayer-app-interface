@@ -10,6 +10,8 @@ const RPC_URL_ENVS: Record<SupportedChainId, string | undefined> = {
   [SupportedChainId.MUMBAI]: process.env.REACT_APP_NETWORK_URL_80001 || undefined,
   [SupportedChainId.FUJI]: process.env.REACT_APP_NETWORK_URL_43113 || undefined,
   [SupportedChainId.POLYZK_TESTNET]: process.env.REACT_APP_NETWORK_URL_1442 || undefined,
+  [SupportedChainId.SEPOLIA]: process.env.REACT_APP_NETWORK_URL_11155111 || undefined,
+  [SupportedChainId.OP_TESTNET]: process.env.REACT_APP_NETWORK_URL_11155420 || undefined,
 }
 
 const DEFAULT_RPC_URL: Record<SupportedChainId, { url: string; usesInfura: boolean }> = {
@@ -19,6 +21,8 @@ const DEFAULT_RPC_URL: Record<SupportedChainId, { url: string; usesInfura: boole
   [SupportedChainId.FUJI]: { url: `https://api.avax-test.network/ext/bc/C/rpc`, usesInfura: false },
   [SupportedChainId.MUMBAI]: { url: `https://polygon-mumbai-bor.publicnode.com`, usesInfura: true },
   [SupportedChainId.POLYZK_TESTNET]: { url: `https://rpc.public.zkevm-test.net`, usesInfura: true },
+  [SupportedChainId.SEPOLIA]: { url: `https://sepolia.gateway.tenderly.co`, usesInfura: true },
+  [SupportedChainId.OP_TESTNET]: { url: `https://optimism-sepolia.blockpi.network/v1/rpc/public`, usesInfura: true },
 }
 
 /**
@@ -31,6 +35,8 @@ export const RPC_URLS = {
   [SupportedChainId.FUJI]: getRpcUrl(SupportedChainId.FUJI),
   [SupportedChainId.MUMBAI]: getRpcUrl(SupportedChainId.MUMBAI),
   [SupportedChainId.POLYZK_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
+  [SupportedChainId.SEPOLIA]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
+  [SupportedChainId.OP_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
 }
 
 export const MAINNET_PROVIDER = new JsonRpcProvider(RPC_URLS[SupportedChainId.MAINNET])

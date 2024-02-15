@@ -19,6 +19,10 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
       return [RPC_URLS[chainId]]
     case SupportedChainId.POLYZK_TESTNET:
       return [RPC_URLS[chainId]]
+    case SupportedChainId.SEPOLIA:
+      return [RPC_URLS[chainId]]
+    case SupportedChainId.OP_TESTNET:
+      return [RPC_URLS[chainId]]
     case SupportedChainId.GNOSIS_CHAIN:
       return ['https://rpc.gnosischain.com/']
     default:

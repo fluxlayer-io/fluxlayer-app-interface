@@ -157,6 +157,42 @@ export const USDC_POLYZK_TESTNET = new TokenWithLogo(
   'USDC',
   'USD Coin'
 )
+// SEPOLIA Testnet
+export const LINK_SEPOLIA = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.SEPOLIA,
+  '0xb227f007804c16546Bd054dfED2E7A1fD5437678',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
+export const USDC_SEPOLIA = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.SEPOLIA,
+  '0xbe72E441BF55620febc26715db68d3494213D8Cb',
+  6,
+  'USDC',
+  'USD Coin'
+)
+// OP Testnet
+export const LINK_OP_TESTNET = new TokenWithLogo(
+  LINK_MAINNET.logoURI,
+  SupportedChainId.OP_TESTNET,
+  '0xE4aB69C077896252FAFBD49EFD26B5D171A32410',
+  18,
+  'LINK',
+  'Chainlink Token'
+)
+
+export const USDC_OP_TESTNET = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.OP_TESTNET,
+  '0x00D2d1162c689179e8bA7a3b936f80A010A0b5CF',
+  6,
+  'USDC',
+  'USD Coin'
+)
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,
@@ -216,6 +252,8 @@ export const USDC: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MUMBAI]: USDC_GOERLI,
   [SupportedChainId.FUJI]: USDC_FUJI,
   [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI,
+  [SupportedChainId.SEPOLIA]: USDC_SEPOLIA,
+  [SupportedChainId.OP_TESTNET]: USDC_OP_TESTNET,
 }
 
 export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedChainId]?: string } } = {
@@ -226,6 +264,8 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.MUMBAI]: USDC_GOERLI.address,
     [SupportedChainId.FUJI]: USDC_FUJI.address,
     [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI.address,
+    [SupportedChainId.SEPOLIA]: USDC_SEPOLIA.address,
+    [SupportedChainId.OP_TESTNET]: USDC_OP_TESTNET.address,
   },
 }
 
@@ -266,6 +306,8 @@ export const V_COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MUMBAI]: V_COW_TOKEN_GOERLI,
   [SupportedChainId.FUJI]: V_COW_TOKEN_GOERLI,
   [SupportedChainId.POLYZK_TESTNET]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.SEPOLIA]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.OP_TESTNET]: V_COW_TOKEN_GOERLI,
 }
 
 /**
@@ -305,6 +347,8 @@ export const COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.FUJI]: COW_TOKEN_GOERLI,
   [SupportedChainId.MUMBAI]: COW_TOKEN_GOERLI,
   [SupportedChainId.POLYZK_TESTNET]: COW_TOKEN_GOERLI,
+  [SupportedChainId.SEPOLIA]: COW_TOKEN_GOERLI,
+  [SupportedChainId.OP_TESTNET]: COW_TOKEN_GOERLI,
 }
 
 export const GNO: Record<SupportedChainId, TokenWithLogo> = {
@@ -314,6 +358,8 @@ export const GNO: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.FUJI]: GNO_GOERLI,
   [SupportedChainId.MUMBAI]: GNO_GOERLI,
   [SupportedChainId.POLYZK_TESTNET]: GNO_GOERLI,
+  [SupportedChainId.SEPOLIA]: GNO_GOERLI,
+  [SupportedChainId.OP_TESTNET]: GNO_GOERLI,
 }
 
 export const EURE_GNOSIS_CHAIN = new TokenWithLogo(

@@ -6,6 +6,7 @@ import GoerliLogo from '@cowprotocol/assets/cow-swap/network-goerli-logo.svg'
 import EthereumLogo from '@cowprotocol/assets/cow-swap/network-mainnet-logo.svg'
 import AvalancheLogo from '@cowprotocol/assets/cow-swap/network-avalanche-logo.svg'
 import MumbaiLogo from '@cowprotocol/assets/cow-swap/network-mumbai-logo.svg'
+import OptimismLogo from '@cowprotocol/assets/cow-swap/optimism-ethereum-op-logo.svg'
 
 export enum NetworkType {
   L1,
@@ -83,17 +84,6 @@ export const CHAIN_INFO: ChainInfoMap = {
     logoUrl: MumbaiLogo,
     nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
   },
-  [SupportedChainId.POLYZK_TESTNET]: {
-    networkType: NetworkType.L1,
-    docs: 'https://docs.cow.fi/',
-    explorer: 'https://testnet-zkevm.polygonscan.com/',
-    infoLink: COW_PROTOCOL_LINK,
-    label: 'Polyzk Testnet',
-    name: 'polyzk_testnet',
-    explorerTitle: 'polygonscan',
-    logoUrl: MumbaiLogo,
-    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  },
   [SupportedChainId.GNOSIS_CHAIN]: {
     networkType: NetworkType.L1,
     docs: 'https://docs.gnosischain.com/',
@@ -105,6 +95,39 @@ export const CHAIN_INFO: ChainInfoMap = {
     explorerTitle: 'Gnosisscan',
     logoUrl: GnosisChainLogo,
     nativeCurrency: { name: 'xDai', symbol: 'XDAI', decimals: 18 },
+  },
+  [SupportedChainId.POLYZK_TESTNET]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://testnet-zkevm.polygonscan.com/',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Polyzk Testnet',
+    name: 'polyzk_testnet',
+    explorerTitle: 'polygonscan',
+    logoUrl: MumbaiLogo,
+    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  },
+  [SupportedChainId.SEPOLIA]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://sepolia.etherscan.io/',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Sepolia',
+    name: 'sepolia',
+    explorerTitle: 'Etherscan',
+    logoUrl: GoerliLogo,
+    nativeCurrency: { name: 'Sepolia Ether', symbol: 'sepETH', decimals: 18 },
+  },
+  [SupportedChainId.OP_TESTNET]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://sepolia-optimism.etherscan.io/',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'OP Testnet',
+    name: 'op_testnet',
+    explorerTitle: 'optimismscan',
+    logoUrl: OptimismLogo,
+    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   },
 }
 

@@ -15,4 +15,6 @@ export const targetNetworks: TargetNetwork[] = [
   { title: 'Polygon Mumbai', value: 80001 },
   defaultTargetNetwork,
   { title: 'PolyzkEVM testnet', value: 1442 },
+  { title: 'Sepolia', value: 11155111 },
+  { title: 'OP testnet', value: 11155420 },
 ]

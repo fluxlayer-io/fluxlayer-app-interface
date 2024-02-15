@@ -17,6 +17,8 @@ const indexFiles = {
   [SupportedChainId.FUJI]: goerliIndex,
   [SupportedChainId.MUMBAI]: goerliIndex,
   [SupportedChainId.POLYZK_TESTNET]: goerliIndex,
+  [SupportedChainId.SEPOLIA]: goerliIndex,
+  [SupportedChainId.OP_TESTNET]: goerliIndex,
 }
 
 const chainNames = {
@@ -26,6 +28,8 @@ const chainNames = {
   [SupportedChainId.FUJI]: 'fuji',
   [SupportedChainId.MUMBAI]: 'mumbai',
   [SupportedChainId.POLYZK_TESTNET]: 'polyzk',
+  [SupportedChainId.SEPOLIA]: 'sep',
+  [SupportedChainId.OP_TESTNET]: 'opsep',
 }
 
 const DISTRO_REPO_BRANCH_NAME = 'main'

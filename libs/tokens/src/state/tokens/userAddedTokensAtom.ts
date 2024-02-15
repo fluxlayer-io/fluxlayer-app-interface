@@ -13,6 +13,8 @@ export const userAddedTokensAtom = atomWithStorage<Record<SupportedChainId, Toke
   [SupportedChainId.MUMBAI]: {},
   [SupportedChainId.FUJI]: {},
   [SupportedChainId.POLYZK_TESTNET]: {},
+  [SupportedChainId.SEPOLIA]: {},
+  [SupportedChainId.OP_TESTNET]: {},
 })
 
 export const userAddedTokensListAtom = atom((get) => {

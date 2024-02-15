@@ -21,6 +21,8 @@ const { atom: lastUpdateTimeAtom, updateAtom: updateLastUpdateTimeAtom } = atomW
     [SupportedChainId.FUJI]: 0,
     [SupportedChainId.MUMBAI]: 0,
     [SupportedChainId.POLYZK_TESTNET]: 0,
+    [SupportedChainId.SEPOLIA]: 0,
+    [SupportedChainId.OP_TESTNET]: 0,
   })
 )
 

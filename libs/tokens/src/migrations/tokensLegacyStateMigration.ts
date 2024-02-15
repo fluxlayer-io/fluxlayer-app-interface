@@ -70,6 +70,8 @@ function migrateLegacyTokenLists() {
     [SupportedChainId.MUMBAI]: [],
     [SupportedChainId.FUJI]: [],
     [SupportedChainId.POLYZK_TESTNET]: [],
+    [SupportedChainId.SEPOLIA]: [],
+    [SupportedChainId.OP_TESTNET]: [],
   }
 
   const tokenListsState: TokenListsState = {
@@ -79,6 +81,8 @@ function migrateLegacyTokenLists() {
     [SupportedChainId.FUJI]: {},
     [SupportedChainId.MUMBAI]: {},
     [SupportedChainId.POLYZK_TESTNET]: {},
+    [SupportedChainId.SEPOLIA]: {},
+    [SupportedChainId.OP_TESTNET]: {},
   }
 
   Object.keys(listsState).forEach((chainIdStr) => {

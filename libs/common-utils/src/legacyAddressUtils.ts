@@ -65,6 +65,8 @@ const ETHERSCAN_URLS: { [chainId in ChainId]: string } = {
   1442: 'testnet-zkevm.polygonscan.com',
   80001: 'mumbai.polygonscan.com',
   43113: 'testnet.snowtrace.io',
+  11155111: 'sepolia.etherscan.io/',
+  11155420: 'sepolia-optimism.etherscan.io/',
 }
 
 export type BlockExplorerLinkType =

@@ -42,6 +42,8 @@ const DEFAULT_CLAIM_INFO_PER_CHAIN: ClaimInfoPerChain = {
   [SupportedChainId.MUMBAI]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.FUJI]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.POLYZK_TESTNET]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.SEPOLIA]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.OP_TESTNET]: { ...DEFAULT_CLAIM_INFO },
 }
 
 type ClaimInfoPerAccount = Record<string, ClaimInfoPerChain>

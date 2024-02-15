@@ -7,6 +7,8 @@ const chainIdToName: Record<SupportedChainId, string> = {
   [SupportedChainId.FUJI]: 'avalanchecfuji',
   [SupportedChainId.MUMBAI]: 'polygonmumbai',
   [SupportedChainId.POLYZK_TESTNET]: 'polygonzkevm',
+  [SupportedChainId.SEPOLIA]: 'ethereum',
+  [SupportedChainId.OP_TESTNET]: 'optimism',
 }
 
 export function trustTokenLogoUrl(address: string, chainId: SupportedChainId): string {

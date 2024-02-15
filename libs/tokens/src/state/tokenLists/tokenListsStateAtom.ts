@@ -13,6 +13,8 @@ export const userAddedListsSourcesAtom = atomWithStorage<ListsSourcesByNetwork>(
   [SupportedChainId.MUMBAI]: [],
   [SupportedChainId.FUJI]: [],
   [SupportedChainId.POLYZK_TESTNET]: [],
+  [SupportedChainId.SEPOLIA]: [],
+  [SupportedChainId.OP_TESTNET]: [],
 })
 
 export const allListsSourcesAtom = atom((get) => {
@@ -30,6 +32,8 @@ export const listsStatesByChainAtom = atomWithStorage<TokenListsState>('allToken
   [SupportedChainId.MUMBAI]: {},
   [SupportedChainId.FUJI]: {},
   [SupportedChainId.POLYZK_TESTNET]: {},
+  [SupportedChainId.SEPOLIA]: {},
+  [SupportedChainId.OP_TESTNET]: {},
 })
 
 export const tokenListsUpdatingAtom = atom<boolean>(false)

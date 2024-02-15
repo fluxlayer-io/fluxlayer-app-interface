@@ -95,44 +95,9 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } 
     'xDAI',
     'xDAI'
   ),
-  [ChainId.MUMBAI]: new TokenWithLogo(
-    undefined,
-    ChainId.MUMBAI,
-    NATIVE_CURRENCY_BUY_ADDRESS,
-    18,
-    'WMATIC',
-    'WMATIC'
-  ),
-  [ChainId.FUJI]: new TokenWithLogo(
-    undefined,
-    ChainId.FUJI,
-    NATIVE_CURRENCY_BUY_ADDRESS,
-    18,
-    'AVAX',
-    'AVAX'
-  ),
-  [ChainId.POLYZK_TESTNET]: new TokenWithLogo(
-    undefined,
-    ChainId.POLYZK_TESTNET,
-    NATIVE_CURRENCY_BUY_ADDRESS,
-    18,
-    'WETH',
-    'WETH'
-  ),
-  [ChainId.SEPOLIA]: new TokenWithLogo(
-    undefined,
-    ChainId.SEPOLIA,
-    NATIVE_CURRENCY_BUY_ADDRESS,
-    18,
-    'WETH',
-    'WETH'
-  ),
-  [ChainId.OP_TESTNET]: new TokenWithLogo(
-    undefined,
-    ChainId.OP_TESTNET,
-    NATIVE_CURRENCY_BUY_ADDRESS,
-    18,
-    'WETH',
-    'WETH'
-  ),
+  [ChainId.MUMBAI]: WMATIC_MUMBAI,
+  [ChainId.FUJI]: WAVAX_FUJI,
+  [ChainId.POLYZK_TESTNET]: WETH_POLYZKTESTNET,
+  [ChainId.SEPOLIA]: WETH_SEPOLIA,
+  [ChainId.OP_TESTNET]: WETH_OP_TESTNET
 }

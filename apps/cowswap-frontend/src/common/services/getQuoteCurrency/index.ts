@@ -20,6 +20,8 @@ const STABLE_COINS: { [key in SupportedChainId]: string[] } = {
   [SupportedChainId.MUMBAI]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
   [SupportedChainId.FUJI]: [USDC_FUJI].map((token) => token.address.toLowerCase()),
   [SupportedChainId.POLYZK_TESTNET]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
+  [SupportedChainId.SEPOLIA]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
+  [SupportedChainId.OP_TESTNET]: [USDC_GOERLI, USDT_GOERLI, DAI_GOERLI].map((token) => token.address.toLowerCase()),
 }
 
 /**

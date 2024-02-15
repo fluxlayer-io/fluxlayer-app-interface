@@ -13,6 +13,8 @@ export const unsupportedTokensAtom = atomWithStorage<Record<SupportedChainId, Un
     [SupportedChainId.FUJI]: {},
     [SupportedChainId.MUMBAI]: {},
     [SupportedChainId.POLYZK_TESTNET]: {},
+    [SupportedChainId.SEPOLIA]: {},
+    [SupportedChainId.OP_TESTNET]: {},
   }
 )
 

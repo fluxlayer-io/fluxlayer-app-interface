@@ -57,6 +57,22 @@ export const WETH_POLYZKTESTNET = new TokenWithLogo(
   'WETH',
   'Wrapped Ether'
 )
+export const WETH_SEPOLIA = new TokenWithLogo(
+  WETH_MAINNET.logoURI,
+  ChainId.SEPOLIA,
+  '0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+export const WETH_OP_TESTNET = new TokenWithLogo(
+  WETH_MAINNET.logoURI,
+  ChainId.OP_TESTNET,
+  '0x74A4A85C611679B73F402B36c0F84A7D2CcdFDa3',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
 export const WRAPPED_NATIVE_CURRENCY: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: WETH_MAINNET,
   [SupportedChainId.GNOSIS_CHAIN]: WXDAI,
@@ -64,6 +80,8 @@ export const WRAPPED_NATIVE_CURRENCY: Record<SupportedChainId, TokenWithLogo> = 
   [SupportedChainId.FUJI]: WAVAX_FUJI,
   [SupportedChainId.MUMBAI]: WMATIC_MUMBAI,
   [SupportedChainId.POLYZK_TESTNET]: WETH_POLYZKTESTNET,
+  [SupportedChainId.SEPOLIA]: WETH_SEPOLIA,
+  [SupportedChainId.OP_TESTNET]: WETH_OP_TESTNET,
 }
 
 export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } = {
@@ -85,6 +103,14 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } 
     'WMATIC',
     'WMATIC'
   ),
+  [ChainId.FUJI]: new TokenWithLogo(
+    undefined,
+    ChainId.FUJI,
+    NATIVE_CURRENCY_BUY_ADDRESS,
+    18,
+    'AVAX',
+    'AVAX'
+  ),
   [ChainId.POLYZK_TESTNET]: new TokenWithLogo(
     undefined,
     ChainId.POLYZK_TESTNET,
@@ -93,12 +119,20 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } 
     'WETH',
     'WETH'
   ),
-  [ChainId.FUJI]: new TokenWithLogo(
+  [ChainId.SEPOLIA]: new TokenWithLogo(
     undefined,
-    ChainId.FUJI,
+    ChainId.SEPOLIA,
     NATIVE_CURRENCY_BUY_ADDRESS,
     18,
-    'AVAX',
-    'AVAX'
+    'WETH',
+    'WETH'
+  ),
+  [ChainId.OP_TESTNET]: new TokenWithLogo(
+    undefined,
+    ChainId.OP_TESTNET,
+    NATIVE_CURRENCY_BUY_ADDRESS,
+    18,
+    'WETH',
+    'WETH'
   ),
 }

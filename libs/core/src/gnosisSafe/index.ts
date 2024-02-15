@@ -19,8 +19,10 @@ const CHAIN_SHORT_NAME: Record<SupportedChainId, string> = {
   [SupportedChainId.GNOSIS_CHAIN]: 'gno', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-100.json
   [SupportedChainId.GOERLI]: 'gor', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
   [SupportedChainId.MUMBAI]: 'maticmum', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
-  [SupportedChainId.FUJI]: 'Fuji', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
-  [SupportedChainId.POLYZK_TESTNET]: 'testnet-zkEVM-mango', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-5.json
+  [SupportedChainId.FUJI]: 'Fuji', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-43113.json
+  [SupportedChainId.POLYZK_TESTNET]: 'testnet-zkEVM-mango', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-1442.json
+  [SupportedChainId.SEPOLIA]: 'sep', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-11155111.json
+  [SupportedChainId.OP_TESTNET]: 'opsep', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-11155420.json
 }
 
 const SAFE_TRANSACTION_SERVICE_CACHE: Partial<Record<number, SafeApiKit | null>> = {}

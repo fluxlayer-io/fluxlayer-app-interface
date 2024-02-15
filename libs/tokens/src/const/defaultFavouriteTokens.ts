@@ -20,7 +20,11 @@ import {
   USDC_MUMBAI,
   LINK_MUMBAI,
   USDC_POLYZK_TESTNET,
-  LINK_POLYZK_TESTNET
+  LINK_POLYZK_TESTNET,
+  USDC_SEPOLIA,
+  LINK_SEPOLIA,
+  USDC_OP_TESTNET,
+  LINK_OP_TESTNET,
 } from '@cowprotocol/common-const'
 
 const tokensListToMap = (list: TokenWithLogo[]) =>
@@ -76,5 +80,17 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
     COW[SupportedChainId.POLYZK_TESTNET],
     LINK_POLYZK_TESTNET,
     USDC_POLYZK_TESTNET,
+  ]),
+  [SupportedChainId.SEPOLIA]: tokensListToMap([
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.SEPOLIA],
+    COW[SupportedChainId.SEPOLIA],
+    LINK_SEPOLIA,
+    USDC_SEPOLIA,
+  ]),
+  [SupportedChainId.OP_TESTNET]: tokensListToMap([
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.OP_TESTNET],
+    COW[SupportedChainId.OP_TESTNET],
+    LINK_OP_TESTNET,
+    USDC_OP_TESTNET,
   ]),
 }

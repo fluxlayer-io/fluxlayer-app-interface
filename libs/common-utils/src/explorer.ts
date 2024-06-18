@@ -24,6 +24,7 @@ function _getExplorerUrlByEnvironment() {
     [ChainId.POLYZK_TESTNET]: `${baseUrl}/goerli`,
     [ChainId.SEPOLIA]: `${baseUrl}/goerli`,
     [ChainId.OP_TESTNET]: `${baseUrl}/goerli`,
+    [ChainId.HOLESKY]: `${baseUrl}/goerli`,
   }
 }
 

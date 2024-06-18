@@ -11,6 +11,7 @@ export const EXPECTED_EXECUTION_TIME: Record<SupportedChainId, number> = {
   [SupportedChainId.POLYZK_TESTNET]: 50,
   [SupportedChainId.SEPOLIA]: 50,
   [SupportedChainId.OP_TESTNET]: 50,
+  [SupportedChainId.HOLESKY]: 50,
 }
 
 const LOG_FUNCTION = Math.log2

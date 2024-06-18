@@ -12,7 +12,7 @@ import { fetchWithRateLimit } from 'common/utils/fetch'
 export const API_NAME = '1inch'
 const ENABLED = process.env.REACT_APP_PRICE_FEED_1INCH_ENABLED !== 'false'
 
-const SUPPORTED_CHAINS = [ChainId.MAINNET, ChainId.GNOSIS_CHAIN]
+const SUPPORTED_CHAINS = [ChainId.MAINNET, ChainId.GNOSIS_CHAIN, ChainId.HOLESKY]
 
 // 1inch API
 // Docs: https://docs.1inch.io/docs/aggregation-protocol/api/swagger

@@ -12,6 +12,7 @@ const RPC_URL_ENVS: Record<SupportedChainId, string | undefined> = {
   [SupportedChainId.POLYZK_TESTNET]: process.env.REACT_APP_NETWORK_URL_1442 || undefined,
   [SupportedChainId.SEPOLIA]: process.env.REACT_APP_NETWORK_URL_11155111 || undefined,
   [SupportedChainId.OP_TESTNET]: process.env.REACT_APP_NETWORK_URL_11155420 || undefined,
+  [SupportedChainId.HOLESKY]: process.env.REACT_APP_NETWORK_URL_17000 || undefined,
 }
 
 const DEFAULT_RPC_URL: Record<SupportedChainId, { url: string; usesInfura: boolean }> = {
@@ -23,6 +24,7 @@ const DEFAULT_RPC_URL: Record<SupportedChainId, { url: string; usesInfura: boole
   [SupportedChainId.POLYZK_TESTNET]: { url: `https://rpc.public.zkevm-test.net`, usesInfura: true },
   [SupportedChainId.SEPOLIA]: { url: `https://sepolia.gateway.tenderly.co`, usesInfura: true },
   [SupportedChainId.OP_TESTNET]: { url: `https://optimism-sepolia.blockpi.network/v1/rpc/public`, usesInfura: true },
+  [SupportedChainId.HOLESKY]: { url: `http://localhost:8545`, usesInfura: true },
 }
 
 /**
@@ -37,6 +39,7 @@ export const RPC_URLS = {
   [SupportedChainId.POLYZK_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
   [SupportedChainId.SEPOLIA]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
   [SupportedChainId.OP_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
+  [SupportedChainId.HOLESKY]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
 }
 
 export const MAINNET_PROVIDER = new JsonRpcProvider(RPC_URLS[SupportedChainId.MAINNET])

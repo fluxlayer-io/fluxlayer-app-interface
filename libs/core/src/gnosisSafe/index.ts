@@ -23,6 +23,7 @@ const CHAIN_SHORT_NAME: Record<SupportedChainId, string> = {
   [SupportedChainId.POLYZK_TESTNET]: 'testnet-zkEVM-mango', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-1442.json
   [SupportedChainId.SEPOLIA]: 'sep', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-11155111.json
   [SupportedChainId.OP_TESTNET]: 'opsep', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-11155420.json
+  [SupportedChainId.HOLESKY]: 'holesky',
 }
 
 const SAFE_TRANSACTION_SERVICE_CACHE: Partial<Record<number, SafeApiKit | null>> = {}

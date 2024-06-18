@@ -9,6 +9,7 @@ const chainIdToName: Record<SupportedChainId, string> = {
   [SupportedChainId.POLYZK_TESTNET]: 'polygonzkevm',
   [SupportedChainId.SEPOLIA]: 'ethereum',
   [SupportedChainId.OP_TESTNET]: 'optimism',
+  [SupportedChainId.HOLESKY]: 'ethereum',
 }
 
 export function trustTokenLogoUrl(address: string, chainId: SupportedChainId): string {

@@ -72,6 +72,7 @@ function migrateLegacyTokenLists() {
     [SupportedChainId.POLYZK_TESTNET]: [],
     [SupportedChainId.SEPOLIA]: [],
     [SupportedChainId.OP_TESTNET]: [],
+    [SupportedChainId.HOLESKY]: [],
   }
 
   const tokenListsState: TokenListsState = {
@@ -83,6 +84,7 @@ function migrateLegacyTokenLists() {
     [SupportedChainId.POLYZK_TESTNET]: {},
     [SupportedChainId.SEPOLIA]: {},
     [SupportedChainId.OP_TESTNET]: {},
+    [SupportedChainId.HOLESKY]: {},
   }
 
   Object.keys(listsState).forEach((chainIdStr) => {

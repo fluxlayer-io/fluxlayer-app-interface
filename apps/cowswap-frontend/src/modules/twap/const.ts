@@ -51,6 +51,7 @@ export const MINIMUM_PART_SELL_AMOUNT_FIAT: Record<SupportedChainId, CurrencyAmo
   [SupportedChainId.POLYZK_TESTNET]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
   [SupportedChainId.SEPOLIA]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
   [SupportedChainId.OP_TESTNET]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
+  [SupportedChainId.HOLESKY]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
 }
 
 export const MINIMUM_PART_TIME = ms`5min` / 1000 // in seconds

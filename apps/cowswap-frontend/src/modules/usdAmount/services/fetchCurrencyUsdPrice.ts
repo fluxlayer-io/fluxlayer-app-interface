@@ -21,6 +21,7 @@ const coingeckoUnknownCurrencies: Record<SupportedChainId, { [address: string]: 
   [SupportedChainId.POLYZK_TESTNET]: {},
   [SupportedChainId.SEPOLIA]: {},
   [SupportedChainId.OP_TESTNET]: {},
+  [SupportedChainId.HOLESKY]: {},
 }
 
 function getShouldSkipCoingecko(currency: Token): boolean {

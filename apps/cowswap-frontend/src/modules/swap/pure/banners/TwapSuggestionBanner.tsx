@@ -39,6 +39,7 @@ const AMOUNT_LIMIT: Record<SupportedChainId, number> = {
   [SupportedChainId.POLYZK_TESTNET]: 100, // $100
   [SupportedChainId.SEPOLIA]: 100, // $100
   [SupportedChainId.OP_TESTNET]: 100, // $100
+  [SupportedChainId.HOLESKY]: 100, // $100
 }
 
 export function TwapSuggestionBanner({

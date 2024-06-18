@@ -59,6 +59,7 @@ export const COWSWAP_ETHFLOW_CONTRACT_ADDRESS: Record<Env, Partial<Record<number
     [ChainId.MUMBAI]: EthFlowProd[ChainId.GOERLI].address,
     [ChainId.SEPOLIA]: EthFlowProd[ChainId.GOERLI].address,
     [ChainId.OP_TESTNET]: EthFlowProd[ChainId.GOERLI].address,
+    [ChainId.HOLESKY]: EthFlowProd[ChainId.GOERLI].address,
   },
   barn: {
     [ChainId.MAINNET]: EthFlowBarn[ChainId.MAINNET].address,
@@ -69,6 +70,7 @@ export const COWSWAP_ETHFLOW_CONTRACT_ADDRESS: Record<Env, Partial<Record<number
     [ChainId.POLYZK_TESTNET]: EthFlowBarn[ChainId.GOERLI].address,
     [ChainId.SEPOLIA]: EthFlowBarn[ChainId.GOERLI].address,
     [ChainId.OP_TESTNET]: EthFlowBarn[ChainId.GOERLI].address,
+    [ChainId.HOLESKY]: EthFlowBarn[ChainId.GOERLI].address,
   },
 }
 
@@ -81,6 +83,7 @@ export const GP_SETTLEMENT_CONTRACT_ADDRESS: Record<number, string> = {
   [ChainId.POLYZK_TESTNET]: GPv2Settlement[ChainId.POLYZK_TESTNET].address,
   [ChainId.SEPOLIA]: GPv2Settlement[ChainId.SEPOLIA].address,
   [ChainId.OP_TESTNET]: GPv2Settlement[ChainId.OP_TESTNET].address,
+  [ChainId.HOLESKY]: GPv2Settlement[ChainId.OP_TESTNET].address,
 }
 
 export const GP_VAULT_RELAYER: Record<number, string> = {
@@ -92,6 +95,7 @@ export const GP_VAULT_RELAYER: Record<number, string> = {
   [ChainId.POLYZK_TESTNET]: GPv2VaultRelayer[ChainId.POLYZK_TESTNET].address,
   [ChainId.SEPOLIA]: GPv2VaultRelayer[ChainId.SEPOLIA].address,
   [ChainId.OP_TESTNET]: GPv2VaultRelayer[ChainId.OP_TESTNET].address,
+  [ChainId.HOLESKY]: GPv2VaultRelayer[ChainId.OP_TESTNET].address,
 }
 
 export const V_COW_CONTRACT_ADDRESS: Record<number, string> = {
@@ -103,6 +107,7 @@ export const V_COW_CONTRACT_ADDRESS: Record<number, string> = {
   [ChainId.POLYZK_TESTNET]: '0x7B878668Cd1a3adF89764D3a331E0A7BB832192D',
   [ChainId.SEPOLIA]: '0x7B878668Cd1a3adF89764D3a331E0A7BB832192D',
   [ChainId.OP_TESTNET]: '0x7B878668Cd1a3adF89764D3a331E0A7BB832192D',
+  [ChainId.HOLESKY]: '0x7B878668Cd1a3adF89764D3a331E0A7BB832192D',
 }
 
 export const COW_CONTRACT_ADDRESS: Record<number, string> = {
@@ -114,6 +119,7 @@ export const COW_CONTRACT_ADDRESS: Record<number, string> = {
   [ChainId.POLYZK_TESTNET]: '0x91056D4A53E1faa1A84306D4deAEc71085394bC8',
   [ChainId.SEPOLIA]: '0x91056D4A53E1faa1A84306D4deAEc71085394bC8',
   [ChainId.OP_TESTNET]: '0x91056D4A53E1faa1A84306D4deAEc71085394bC8',
+  [ChainId.HOLESKY]: '0x91056D4A53E1faa1A84306D4deAEc71085394bC8',
 }
 
 export const INPUT_OUTPUT_EXPLANATION = 'Only executed swaps incur fees.'
@@ -163,6 +169,7 @@ export const GAS_FEE_ENDPOINTS = {
   [ChainId.POLYZK_TESTNET]: '',
   [ChainId.SEPOLIA]: '',
   [ChainId.OP_TESTNET]: '',
+  [ChainId.HOLESKY]: '',
 }
 export const GAS_API_KEYS = {
   [ChainId.MAINNET]: process.env.REACT_APP_BLOCKNATIVE_API_KEY,
@@ -173,6 +180,7 @@ export const GAS_API_KEYS = {
   [ChainId.POLYZK_TESTNET]: '',
   [ChainId.SEPOLIA]: '',
   [ChainId.OP_TESTNET]: '',
+  [ChainId.HOLESKY]: '',
 }
 
 export const UNSUPPORTED_TOKENS_FAQ_URL = '/faq/trading#what-token-pairs-does-cowswap-allow-to-trade'

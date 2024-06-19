@@ -39,7 +39,7 @@ export const RPC_URLS = {
   [SupportedChainId.POLYZK_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
   [SupportedChainId.SEPOLIA]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
   [SupportedChainId.OP_TESTNET]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
-  [SupportedChainId.HOLESKY]: getRpcUrl(SupportedChainId.POLYZK_TESTNET),
+  [SupportedChainId.HOLESKY]: getRpcUrl(SupportedChainId.HOLESKY),
 }
 
 export const MAINNET_PROVIDER = new JsonRpcProvider(RPC_URLS[SupportedChainId.MAINNET])

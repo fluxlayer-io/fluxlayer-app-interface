@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import loadingCowWebp from '@cowprotocol/assets/cow-swap/cow-load.webp'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 import ammsGraphGC from '@cowprotocol/assets/images/amms-graph-gc.svg'
 import ammsGraphEth from '@cowprotocol/assets/images/amms-graph.svg'
 import cowGraph from '@cowprotocol/assets/images/cow-graph.svg'
@@ -236,7 +236,7 @@ export function OrderProgressBar(props: OrderProgressBarProps) {
             <ProgressBarInnerWrapper>
               <DelayedProgress percentage={percentage}>
                 <WarningLogo>
-                  <img src={loadingCowWebp} alt="Loading prices..." />
+                  <img src={fluxlayerLogo} alt="Loading prices..." />
                 </WarningLogo>
               </DelayedProgress>
             </ProgressBarInnerWrapper>
@@ -275,7 +275,7 @@ export function OrderProgressBar(props: OrderProgressBarProps) {
             <ProgressBarInnerWrapper>
               <DelayedProgress percentage={percentage}>
                 <WarningLogo>
-                  <img src={loadingCowWebp} alt="Loading prices..." />
+                  <img src={fluxlayerLogo} alt="Loading prices..." />
                 </WarningLogo>
               </DelayedProgress>
             </ProgressBarInnerWrapper>

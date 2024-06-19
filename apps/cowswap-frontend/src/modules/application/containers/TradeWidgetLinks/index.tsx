@@ -29,20 +29,20 @@ interface MenuItemConfig {
 export type BadgeType = 'information' | 'success' | 'alert' | 'alert2' | 'default'
 
 const MENU_ITEMS: MenuItemConfig[] = [
-  { route: Routes.SWAP, label: 'Swap' },
+  // { route: Routes.SWAP, label: 'Swap' },
   { route: Routes.LIMIT_ORDER, label: 'Limit' },
-  {
-    route: Routes.ADVANCED_ORDERS,
-    label: 'TWAP',
-    badgeText: 'NEW!',
-    badgeType: 'alert2',
-  },
+  // {
+  //   route: Routes.ADVANCED_ORDERS,
+  //   label: 'TWAP',
+  //   badgeText: 'NEW!',
+  //   badgeType: 'alert2',
+  // },
 ]
 
 const TRADE_TYPE_TO_ROUTE: Record<TradeType, string> = {
-  swap: Routes.SWAP,
+  // swap: Routes.SWAP,
   limit: Routes.LIMIT_ORDER,
-  advanced: Routes.ADVANCED_ORDERS,
+  // advanced: Routes.ADVANCED_ORDERS,
 }
 
 interface TradeWidgetLinksProps {

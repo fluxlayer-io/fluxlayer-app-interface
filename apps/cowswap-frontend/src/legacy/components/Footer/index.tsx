@@ -75,7 +75,7 @@ export default function Footer() {
     <Wrapper>
       <FooterVersion />
       <Polling />
-      <SVG src={footerImage(darkMode)} description="CoW Swap footer image" />
+      {/* <SVG src={footerImage(darkMode)} description="CoW Swap footer image" /> */}
     </Wrapper>
   )
 }

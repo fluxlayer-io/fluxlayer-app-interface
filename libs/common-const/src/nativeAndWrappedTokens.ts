@@ -109,5 +109,5 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } 
   [ChainId.POLYZK_TESTNET]: WETH_POLYZKTESTNET,
   [ChainId.SEPOLIA]: WETH_SEPOLIA,
   [ChainId.OP_TESTNET]: WETH_OP_TESTNET,
-  [SupportedChainId.HOLESKY]: WETH_HOLESKY,
+  [ChainId.HOLESKY]: WETH_HOLESKY,
 }

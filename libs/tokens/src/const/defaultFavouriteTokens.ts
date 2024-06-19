@@ -98,7 +98,7 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
   [SupportedChainId.HOLESKY]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.HOLESKY],
     COW[SupportedChainId.HOLESKY],
-    LINK_OP_TESTNET,
-    USDC_OP_TESTNET,
+    WETH_HOLESKY,
+    USDC_HOLESKY,
   ]),
 }

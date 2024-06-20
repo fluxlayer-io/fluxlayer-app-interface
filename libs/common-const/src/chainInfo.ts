@@ -129,6 +129,7 @@ export const CHAIN_INFO: ChainInfoMap = {
     logoUrl: OptimismLogo,
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   },
+
 }
 
 export function getChainInfo(chainId: SupportedChainId): L1ChainInfo {

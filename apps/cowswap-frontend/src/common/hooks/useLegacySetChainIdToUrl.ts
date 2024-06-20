@@ -6,6 +6,7 @@ import { SupportedChainId } from 'ccip-sdk'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useTradeTypeInfo } from 'modules/trade'
+import { HOLESKY_INFO } from 'common/pure/NetworksList'
 
 /**
  * Changing chainId in query parameters: ?chain=mainnet
@@ -20,7 +21,11 @@ export function useLegacySetChainIdToUrl() {
       // Don't set chainId as query parameter because swap and limit orders have different routing scheme
       if (tradeTypeInfo) return
 
-      const chainInfo = getChainInfo(chainId)
+      let chainInfo = getChainInfo(chainId)
+      if (chainId === 17000) {
+        chainInfo = HOLESKY_INFO
+      }
+
       if (!chainInfo) return
 
       navigate(

@@ -22,7 +22,6 @@ export function useOnSelectNetwork(): (chainId: SupportedChainId, skipClose?: bo
   return useCallback(
     async (targetChain: SupportedChainId, skipClose?: boolean) => {
       if (!connector) return
-
       const connectionType = getWeb3ReactConnection(connector).type
 
       try {

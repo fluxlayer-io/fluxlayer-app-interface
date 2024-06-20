@@ -6,6 +6,7 @@ import { AlertCircle } from 'react-feather'
 import styled from 'styled-components/macro'
 
 import { useIsProviderNetworkUnsupported } from 'common/hooks/useIsProviderNetworkUnsupported'
+import { useWeb3React } from '@web3-react/core'
 
 export const UNSUPPORTED_WALLET_TEXT = (
   <Trans>
@@ -40,10 +41,11 @@ const StyledAlertCircle = styled(AlertCircle)`
 
 export function WalletUnsupportedNetworkBanner() {
   const isChainIdUnsupported = useIsProviderNetworkUnsupported()
+  const { chainId } = useWeb3React()
 
   return (
     <>
-      {isChainIdUnsupported && (
+      {chainId !== 17000 && isChainIdUnsupported && (
         <Wrapper>
           <div>
             <StyledAlertCircle size={24} />

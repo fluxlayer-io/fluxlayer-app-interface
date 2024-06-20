@@ -17,7 +17,7 @@ import { MEDIA_WIDTHS } from 'legacy/theme'
 import { UI } from 'common/constants/theme'
 import { useIsProviderNetworkUnsupported } from 'common/hooks/useIsProviderNetworkUnsupported'
 import { useOnSelectNetwork } from 'common/hooks/useOnSelectNetwork'
-import { NetworksList } from 'common/pure/NetworksList'
+import { HOLESKY_INFO, NetworksList } from 'common/pure/NetworksList'
 
 const FlyoutHeader = styled.div`
   color: var(${UI.COLOR_TEXT1});
@@ -156,8 +156,8 @@ const NetworkAlertLabel = styled.div`
 `
 
 export function NetworkSelector() {
-  const { provider } = useWeb3React()
-  const { chainId } = useWalletInfo()
+  const { provider, chainId: web3ChainId } = useWeb3React()
+  const { chainId, account } = useWalletInfo()
   const node = useRef<HTMLDivElement>(null)
   const isOpen = useModalIsOpen(ApplicationModal.NETWORK_SELECTOR)
   const openModal = useOpenModal(ApplicationModal.NETWORK_SELECTOR)
@@ -166,7 +166,7 @@ export function NetworkSelector() {
   const isSmartContractWallet = useIsSmartContractWallet()
   const isTallyWallet = getIsTallyWallet(provider?.provider)
   const isChainIdUnsupported = useIsProviderNetworkUnsupported()
-  const info = getChainInfo(chainId)
+  let info = getChainInfo(chainId)
 
   const onSelectChain = useOnSelectNetwork()
 
@@ -176,7 +176,9 @@ export function NetworkSelector() {
   if (!chainId || !provider || isSmartContractWallet || isTallyWallet) {
     return null
   }
-
+  if (chainId === 1 && web3ChainId === 17000) {
+    info = HOLESKY_INFO
+  }
   return (
     <SelectorWrapper
       ref={node}
@@ -185,7 +187,7 @@ export function NetworkSelector() {
       onClick={isUpToMedium ? toggleModal : undefined}
     >
       <SelectorControls isChainIdUnsupported={isChainIdUnsupported}>
-        {!isChainIdUnsupported ? (
+        {!isChainIdUnsupported || web3ChainId === 17000 ? (
           <>
             <SelectorLogo src={info?.logoUrl} />
             <SelectorLabel>{info?.label}</SelectorLabel>

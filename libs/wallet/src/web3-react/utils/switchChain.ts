@@ -1,3 +1,4 @@
+import { HOLESKY_INFO } from './../../../../../apps/cowswap-frontend/src/common/pure/NetworksList/index';
 import { SupportedChainId } from 'ccip-sdk'
 import { Connector } from '@web3-react/types'
 
@@ -6,7 +7,8 @@ import { isChainAllowed } from './isChainAllowed'
 
 import { ConnectionType } from '../../api/types'
 import { getIsWalletConnect } from '../hooks/useIsWalletConnect'
-import { getChainInfo, RPC_URLS } from '@cowprotocol/common-const'
+import { COW_PROTOCOL_LINK, getChainInfo, NetworkType, RPC_URLS } from '@cowprotocol/common-const'
+import GoerliLogo from '@cowprotocol/assets/cow-swap/network-goerli-logo.svg'
 
 function getRpcUrls(chainId: SupportedChainId): [string] {
   switch (chainId) {
@@ -25,6 +27,8 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
       return [RPC_URLS[chainId]]
     case SupportedChainId.GNOSIS_CHAIN:
       return ['https://rpc.gnosischain.com/']
+    case 17000:
+      return ['https://endpoints.omniatech.io/v1/eth/holesky/public/']
     default:
   }
   // Our API-keyed URLs will fail security checks when used with external wallets.
@@ -43,7 +47,10 @@ export const switchChain = async (connector: Connector, chainId: SupportedChainI
   if (isNetworkConnection || isWalletConnect) {
     await connector.activate(chainId)
   } else {
-    const info = getChainInfo(chainId)
+    let info = getChainInfo(chainId)
+    if (chainId === 17000) {
+      info = HOLESKY_INFO
+    }
     const addChainParameter = {
       chainId,
       chainName: info.label,

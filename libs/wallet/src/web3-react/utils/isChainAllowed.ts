@@ -4,19 +4,20 @@ import { Connector } from '@web3-react/types'
 import { getWeb3ReactConnection } from './getWeb3ReactConnection'
 
 import { ConnectionType } from '../../api/types'
+const PLUS_SUPPORTED = [...ALL_SUPPORTED_CHAIN_IDS, 17000]
 
 const allowedChainsByWallet: Record<ConnectionType, SupportedChainId[]> = {
-  [ConnectionType.INJECTED]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.INJECTED_WIDGET]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.COINBASE_WALLET]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.WALLET_CONNECT_V2]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.NETWORK]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.GNOSIS_SAFE]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.TALLY]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.TRUST]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.LEDGER]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.TREZOR]: ALL_SUPPORTED_CHAIN_IDS,
-  [ConnectionType.KEYSTONE]: ALL_SUPPORTED_CHAIN_IDS,
+  [ConnectionType.INJECTED]: PLUS_SUPPORTED,
+  [ConnectionType.INJECTED_WIDGET]: PLUS_SUPPORTED,
+  [ConnectionType.COINBASE_WALLET]: PLUS_SUPPORTED,
+  [ConnectionType.WALLET_CONNECT_V2]: PLUS_SUPPORTED,
+  [ConnectionType.NETWORK]: PLUS_SUPPORTED,
+  [ConnectionType.GNOSIS_SAFE]: PLUS_SUPPORTED,
+  [ConnectionType.TALLY]: PLUS_SUPPORTED,
+  [ConnectionType.TRUST]: PLUS_SUPPORTED,
+  [ConnectionType.LEDGER]: PLUS_SUPPORTED,
+  [ConnectionType.TREZOR]: PLUS_SUPPORTED,
+  [ConnectionType.KEYSTONE]: PLUS_SUPPORTED,
   [ConnectionType.ALPHA]: [],
   [ConnectionType.AMBIRE]: [],
   [ConnectionType.ZENGO]: [],

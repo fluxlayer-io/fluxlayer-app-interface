@@ -2,7 +2,7 @@ import { COW_PROTOCOL_LINK } from '@cowprotocol/common-const'
 import { ExternalLink } from '@cowprotocol/ui'
 
 import { Trans } from '@lingui/macro'
-import cometIcon from 'assets/logo/comet-icon.svg'
+import fluxlayerIcon from 'assets/logo/fluxlayer-icon.svg'
 import SVG from 'react-inlinesvg'
 import styled from 'styled-components/macro'
 
@@ -39,7 +39,7 @@ export function PoweredFooter() {
   return (
     <Wrapper>
       <StyledExternalLink href={COW_PROTOCOL_LINK}>
-        <SVG src={cometIcon} title="Comet" />
+        <SVG src={fluxlayerIcon} title="fluxlayer" />
         <Trans>Powered by CCIP Swap</Trans>
       </StyledExternalLink>
     </Wrapper>

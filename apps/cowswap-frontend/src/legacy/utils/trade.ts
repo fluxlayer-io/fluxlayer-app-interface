@@ -226,31 +226,18 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   // The named list of all type definitions
   const types = {
     Order: [
-      {name: 'maker', type: 'address'},
-      {name: 'taker', type: 'address'},
-      {name: 'inputToken', type: 'address'},
-      {name: 'inputAmount', type: 'uint256'},
-      {name: 'outputToken', type: 'address'},
-      {name: 'outputAmount', type: 'uint256'},
-      {name: 'expiry', type: 'uint256'},
-      {name: 'targetNetworkNumber', type: 'uint32'},
-  ]
+      { name: 'orderId', type: 'uint32' },
+      { name: 'maker', type: 'address' },
+      { name: 'taker', type: 'address' },
+      { name: 'inputToken', type: 'address' },
+      { name: 'inputAmount', type: 'uint256' },
+      { name: 'outputToken', type: 'address' },
+      { name: 'outputAmount', type: 'uint256' },
+      { name: 'expiry', type: 'uint256' },
+      { name: 'targetNetworkNumber', type: 'uint32' },
+    ]
   };
 
-  // The data to sign
-  const value = {
-    maker: account,
-    taker: unsignedOrder.receiver,
-    inputToken: unsignedOrder.buyToken,
-    inputAmount: unsignedOrder.buyAmount,
-    outputToken: unsignedOrder.sellToken,
-    outputAmount: unsignedOrder.sellAmount,
-    expiry: unsignedOrder.validTo,
-    targetNetworkNumber: targetNetworkNumber,
-  };
-
-  signature = await signer._signTypedData(domain, types, value);
-  signingScheme = SigningScheme.EIP712
   // const jsonRpcSigner: JsonRpcSigner = signer.connect(new JsonRpcProvider(targetNetworkNumber?.toString()))
   // jsonRpcSigner._signTypedData(domain, types, value);
 
@@ -264,42 +251,66 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   //   signature = account
   // }
 
+
+  // Call API
+  console.log("sending order")
+  const orderId = await orderBookApi.sendOrder(
+    {
+      ...unsignedOrder,
+      from: account,
+      receiver,
+      signingScheme,
+      // Include the signature
+      // signature,
+      targetNetworkNumber,
+      appData: appData.fullAppData, // We sign the keccak256 hash, but we send the API the full appData string
+      appDataHash: appData.appDataKeccak256,
+    },
+    { chainId }
+  )
+  console.log("orderId: ", orderId)
+
+  // The data to sign
+  const value = {
+    orderId: orderId,
+    maker: account,
+    taker: unsignedOrder.receiver,
+    inputToken: unsignedOrder.buyToken,
+    inputAmount: unsignedOrder.buyAmount,
+    outputToken: unsignedOrder.sellToken,
+    outputAmount: unsignedOrder.sellAmount,
+    expiry: unsignedOrder.validTo,
+    targetNetworkNumber: targetNetworkNumber,
+  };
+
+  signature = await signer._signTypedData(domain, types, value);
+  signingScheme = SigningScheme.EIP712
   if (!signature) throw new Error('Signature is undefined!')
 
-  return await wrapErrorInOperatorError(async () => {
-    // Call API
-    const orderId = await orderBookApi.sendOrder(
-      {
-        ...unsignedOrder,
-        from: account,
-        receiver,
-        signingScheme,
-        // Include the signature
-        signature,
-        targetNetworkNumber,
-        unsignedOrder,
-        appData: appData.fullAppData, // We sign the keccak256 hash, but we send the API the full appData string
-        appDataHash: appData.appDataKeccak256,
-      },
-      { chainId }
-    )
+  console.log("signature: ", signature)
+  console.log("updating order")
+  await orderBookApi.updateOrder(
+    orderId,
+    signature,
+    { chainId }
+  )
+  console.log("order updated")
 
-    const pendingOrderParams: Order = mapUnsignedOrderToOrder({
-      unsignedOrder,
-      additionalParams: {
-        ...params,
-        orderId,
-        summary,
-        signature
-      },
-    })
-
-    return {
-      chainId,
-      id: orderId,
-      order: pendingOrderParams,
-    }
+  const pendingOrderParams: Order = mapUnsignedOrderToOrder({
+    unsignedOrder,
+    additionalParams: {
+      ...params,
+      orderId,
+      summary,
+      signature
+    },
   })
+
+  return {
+    chainId,
+    id: orderId,
+    order: pendingOrderParams,
+  }
 }
 
 type OrderCancellationParams = {

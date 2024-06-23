@@ -83,7 +83,7 @@ export const GP_SETTLEMENT_CONTRACT_ADDRESS: Record<number, string> = {
   [ChainId.POLYZK_TESTNET]: GPv2Settlement[ChainId.POLYZK_TESTNET].address,
   [ChainId.SEPOLIA]: GPv2Settlement[ChainId.SEPOLIA].address,
   [ChainId.OP_TESTNET]: GPv2Settlement[ChainId.OP_TESTNET].address,
-  [ChainId.HOLESKY]: GPv2Settlement[ChainId.OP_TESTNET].address,
+  [ChainId.HOLESKY]: GPv2Settlement[ChainId.HOLESKY].address,
 }
 
 export const GP_VAULT_RELAYER: Record<number, string> = {

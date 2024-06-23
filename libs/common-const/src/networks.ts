@@ -24,7 +24,7 @@ const DEFAULT_RPC_URL: Record<SupportedChainId, { url: string; usesInfura: boole
   [SupportedChainId.POLYZK_TESTNET]: { url: `https://rpc.public.zkevm-test.net`, usesInfura: true },
   [SupportedChainId.SEPOLIA]: { url: `https://sepolia.gateway.tenderly.co`, usesInfura: true },
   [SupportedChainId.OP_TESTNET]: { url: `https://optimism-sepolia.blockpi.network/v1/rpc/public`, usesInfura: true },
-  [SupportedChainId.HOLESKY]: { url: `http://localhost:8545`, usesInfura: true },
+  [SupportedChainId.HOLESKY]: { url: `http://localhost:8545`, usesInfura: false },
 }
 
 /**

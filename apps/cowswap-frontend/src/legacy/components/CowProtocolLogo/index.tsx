@@ -1,11 +1,11 @@
-import CowProtocolIcon from '@cowprotocol/assets/cow-swap/cow_v2.svg'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 
 import styled from 'styled-components/macro'
 
 export const Icon = styled.span<Props>`
   --defaultSize: 24px;
   --smallSize: 28px;
-  background: url(${CowProtocolIcon}) no-repeat center/contain;
+  background: url(${fluxlayerLogo}) no-repeat center/contain;
   height: ${({ size }) => (size ? `${size}px` : 'var(--defaultSize)')};
   width: ${({ size }) => (size ? `${size}px` : 'var(--defaultSize)')};
   display: inline-block;

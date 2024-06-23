@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import cowMeditatingV2 from '@cowprotocol/assets/cow-swap/meditating-cow-v2.svg'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 import imageConnectWallet from '@cowprotocol/assets/cow-swap/wallet-plus.svg'
 import { isInjectedWidget } from '@cowprotocol/common-utils'
 import { ExternalLink } from '@cowprotocol/ui'
@@ -206,7 +206,7 @@ export function OrdersTableContainer({
       return (
         <Content>
           <span>
-            <img src={cowMeditatingV2} alt="Cow meditating ..." />
+            <img src={fluxlayerLogo} alt="Cow meditating ..." />
           </span>
           <h3>
             <Trans>{isOpenOrdersTab ? 'No open orders' : 'No orders history'}</Trans>

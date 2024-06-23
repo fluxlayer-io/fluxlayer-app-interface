@@ -1,12 +1,12 @@
-import cometLogo from 'assets/logo/comet-icon.svg'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 
 // Website logo
 export function cowSwapLogo(darkMode: boolean): string {
   // Regular Dark mode logo
-  const darkModeLogo = cometLogo
+  const darkModeLogo = fluxlayerLogo
 
   // Regular Light mode logo
-  const lightModeLogo = cometLogo
+  const lightModeLogo = fluxlayerLogo
   return darkMode ? darkModeLogo : lightModeLogo
 }
 

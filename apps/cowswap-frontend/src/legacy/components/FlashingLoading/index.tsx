@@ -1,4 +1,4 @@
-import CowIcon from '@cowprotocol/assets/cow-swap/cowprotocol.svg'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 
 import { transparentize } from 'polished'
 import SVG from 'react-inlinesvg'
@@ -64,7 +64,7 @@ export const LoadingWrapper = styled.div`
 
 export const Loading = (
   <LoadingWrapper>
-    <SVG src={CowIcon} width={100} height={100} />
+    <SVG src={fluxlayerLogo} width={100} height={100} />
     <span>Loading...</span>
   </LoadingWrapper>
 )

@@ -1,6 +1,5 @@
 import React from 'react'
-
-import loadingCowWebp from '@cowprotocol/assets/cow-swap/cow-load.webp'
+import fluxlayerLogo from 'assets/logo/fluxlayer-icon.svg'
 import { isInjectedWidget } from '@cowprotocol/common-utils'
 
 import * as styledEl from './styled'
@@ -22,7 +21,7 @@ export function CurrencyArrowSeparator(props: CurrencyArrowSeparatorProps) {
     <styledEl.Box withRecipient={withRecipient} isCollapsed={isCollapsed} hasSeparatorLine={hasSeparatorLine}>
       <styledEl.LoadingWrapper isLoading={isLoading} border={border}>
         {!isInjectedWidgetMode && isLoading ? (
-          <styledEl.CowImg src={loadingCowWebp} alt="loading" />
+          <styledEl.CowImg src={fluxlayerLogo} alt="loading" />
         ) : (
           <styledEl.ArrowDownIcon onClick={onSwitchTokens} />
         )}

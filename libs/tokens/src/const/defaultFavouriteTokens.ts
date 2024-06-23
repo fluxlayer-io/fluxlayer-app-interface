@@ -62,8 +62,8 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
   [SupportedChainId.GOERLI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.GOERLI],
     COW[SupportedChainId.GOERLI],
-    WETH_HOLESKY,
-    USDC_HOLESKY,
+    WETH_GOERLI,
+    USDC_GOERLI,
   ]),
   [SupportedChainId.FUJI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.FUJI],

@@ -194,15 +194,6 @@ export const USDC_OP_TESTNET = new TokenWithLogo(
   'USD Coin'
 )
 
-export const WETH_HOLESKY = new TokenWithLogo(
-  WETH_MAINNET.logoURI,
-  SupportedChainId.HOLESKY,
-  '0xb227f007804c16546Bd054dfED2E7A1fD5437678',
-  18,
-  'WETH',
-  'Wrapped Ether on Gnosis Chain'
-)
-
 export const USDC_HOLESKY = new TokenWithLogo(
   USDC_MAINNET.logoURI,
   SupportedChainId.HOLESKY,

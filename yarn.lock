@@ -9305,10 +9305,10 @@ cborg@^1.5.4:
   resolved "https://registry.yarnpkg.com/cborg/-/cborg-1.10.2.tgz#83cd581b55b3574c816f82696307c7512db759a1"
   integrity sha512-b3tFPA9pUr2zCUiCfRd2+wok2/LBSNUMKOuRRok+WlvvAgEt/PlbgPTsZUcwCOs53IJvLgTp0eotwtosE6njug==
 
-ccip-sdk@4.0.23:
-  version "4.0.23"
-  resolved "https://registry.yarnpkg.com/ccip-sdk/-/ccip-sdk-4.0.23.tgz#477d4f610079701fb1b0687378094cab8a564fbb"
-  integrity sha512-A/fMtkj3b1pPcvV4IJ3d7K75Xt+n9QL/dh5ffCwtw3mBPLoyP075z5loVAsv/FlydRarbMXdc+5xeHcyX54cUg==
+ccip-sdk@4.0.24:
+  version "4.0.24"
+  resolved "https://registry.yarnpkg.com/ccip-sdk/-/ccip-sdk-4.0.24.tgz#0b0e8a112ae19ce0c4135a97f490354816de8239"
+  integrity sha512-uldapojX1M3OyuGRo6SSJvKQ9VeWTHQ8vQ26FqaePuq9vqqNYCYsG7OcSJdzCMd6dZ2A5pTqBzXb9YNsBDrX3Q==
   dependencies:
     "@cowprotocol/contracts" "^1.4.0"
     "@ethersproject/abstract-signer" "^5.7.0"

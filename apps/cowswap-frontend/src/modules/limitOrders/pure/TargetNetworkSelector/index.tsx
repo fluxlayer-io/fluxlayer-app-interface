@@ -122,7 +122,7 @@ export function TargetNetworkSelector(props: TargetNetworkSelectorProps) {
   return (
     <styledEl.Wrapper>
       <styledEl.Label>
-        <Trans>Target Networks</Trans>
+        <Trans>Target Network</Trans>
       </styledEl.Label>
       <Menu>
         <styledEl.Current ref={currentDeadlineNode as any} >

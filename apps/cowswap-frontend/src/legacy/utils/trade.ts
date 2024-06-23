@@ -253,8 +253,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
 
 
   // Call API
-  console.log("sending order")
-  const orderId = await orderBookApi.sendOrder(
+  let orderId = await orderBookApi.sendOrder(
     {
       ...unsignedOrder,
       from: account,
@@ -268,7 +267,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     },
     { chainId }
   )
-  console.log("orderId: ", orderId)
+  orderId = Number(orderId)
 
   // The data to sign
   const value = {
@@ -287,14 +286,13 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   signingScheme = SigningScheme.EIP712
   if (!signature) throw new Error('Signature is undefined!')
 
-  console.log("signature: ", signature)
-  console.log("updating order")
   await orderBookApi.updateOrder(
-    orderId,
-    signature,
+    {
+      orderId,
+      signature,
+    },
     { chainId }
   )
-  console.log("order updated")
 
   const pendingOrderParams: Order = mapUnsignedOrderToOrder({
     unsignedOrder,

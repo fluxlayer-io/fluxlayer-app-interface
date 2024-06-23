@@ -72,6 +72,13 @@
       "source": "https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json"
     }
   ],
+  "17000": [
+    {
+      "priority": 1,
+      "enabledByDefault": true,
+      "source": "https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json"
+    }
+  ],
   "1442": [
     {
       "priority": 1,

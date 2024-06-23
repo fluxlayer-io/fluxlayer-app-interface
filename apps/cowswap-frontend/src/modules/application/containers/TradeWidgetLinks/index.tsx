@@ -40,9 +40,9 @@ const MENU_ITEMS: MenuItemConfig[] = [
 ]
 
 const TRADE_TYPE_TO_ROUTE: Record<TradeType, string> = {
-  // swap: Routes.SWAP,
+  swap: Routes.SWAP,
   limit: Routes.LIMIT_ORDER,
-  // advanced: Routes.ADVANCED_ORDERS,
+  advanced: Routes.ADVANCED_ORDERS,
 }
 
 interface TradeWidgetLinksProps {

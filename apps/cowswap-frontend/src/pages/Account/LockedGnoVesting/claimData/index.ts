@@ -1,4 +1,4 @@
-import { Honeyswap } from '@cowprotocol/assets/cow-swap/ammslogo/honeyswap.png';
+// import { Honeyswap } from '@cowprotocol/assets/cow-swap/ammslogo/honeyswap.png';
 import { SupportedChainId } from 'ccip-sdk'
 
 import gnosisChainIndex from './gnosisChain.json'

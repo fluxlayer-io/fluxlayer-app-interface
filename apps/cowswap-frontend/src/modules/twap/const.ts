@@ -36,6 +36,7 @@ export const TWAP_HANDLER_ADDRESS: Record<SupportedChainId, string> = {
   80001: twapHandlerAddress,
   11155111: twapHandlerAddress,
   11155420: twapHandlerAddress,
+  17000: twapHandlerAddress,
 }
 
 export const TWAP_PENDING_STATUSES = [TwapOrderStatus.WaitSigning, TwapOrderStatus.Pending, TwapOrderStatus.Cancelling]

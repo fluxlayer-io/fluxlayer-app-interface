@@ -1,35 +1,35 @@
 import { RADIX_DECIMAL, NATIVE_CURRENCY_BUY_ADDRESS } from '@cowprotocol/common-const'
 import { isAddress, shortenAddress, formatTokenAmount, formatSymbol, getIsNativeToken } from '@cowprotocol/common-utils'
-import { Signer } from '@ethersproject/abstract-signer'
+import { Signer, TypedDataDomain } from "@ethersproject/abstract-signer";
+import { JsonRpcSigner } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
 
 import {
-  // EcdsaSigningScheme,
+  EcdsaSigningScheme,
   OrderClass,
   OrderKind,
   OrderSigningUtils,
-  // SigningScheme,
+  SigningScheme,
   SupportedChainId as ChainId,
   UnsignedOrder,
 } from 'ccip-sdk'
-import networks from 'ccip-sdk/networks.json'
+// import networks from 'ccip-sdk/networks.json'
 import { orderBookApi } from 'cowSdk'
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 
 import { ChangeOrderStatusParams, Order, OrderStatus } from 'legacy/state/orders/actions'
 import { AddUnserialisedPendingOrderParams } from 'legacy/state/orders/hooks'
 
 import { AppDataInfo } from 'modules/appData'
 
-import { getTrades } from 'api/gnosisProtocol'
+import { getIsOrderBookTypedError, getTrades } from 'api/gnosisProtocol'
 import { getProfileData } from 'api/gnosisProtocol/api'
-
-import abi from '../../../../../abis/HUBsource.abi.json'
+import OperatorError, { ApiErrorObject } from 'api/gnosisProtocol/errors/OperatorError'
 
 export type PostOrderParams = {
   account: string
   chainId: ChainId
-  signer: Signer
+  signer: JsonRpcSigner
   kind: OrderKind
   inputAmount: CurrencyAmount<Currency>
   outputAmount: CurrencyAmount<Currency>
@@ -212,47 +212,96 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   // Prepare order
   const { summary, order: unsignedOrder } = getSignOrderParams(params)
   const receiver = unsignedOrder.receiver
-  const fullAppData = JSON.parse(appData.fullAppData)
-  const signature: string = fullAppData.hooks ? fullAppData.hooks.pre.callData : '0x'
 
-  // Contract addresses
-  let HUBSourceAddress;
-  if (networks.GPv2VaultRelayer[chainId])
-    HUBSourceAddress = String(networks.GPv2VaultRelayer[chainId]['address']);
-  else
-    throw new Error('This chain ID is not exist in the networks.json file')
+  let signingScheme: SigningScheme
+  let signature = ''
 
-  // Contract ABI
-  const HUBSourceABI = abi;
-
-  // Connect to the contract using the ABI and contract address
-  const HUBSource = new ethers.Contract(HUBSourceAddress, HUBSourceABI, signer);
-
-  // Create Order object
-  const contractParam: object = {
-    makerToken: unsignedOrder.sellToken,
-    makerAmount: unsignedOrder.sellAmount,
-    takerToken: unsignedOrder.buyToken,
-    takerAmount: unsignedOrder.buyAmount,
-    maker: account,
-    expiry: unsignedOrder.validTo,
-    taker: ethers.constants.AddressZero,
-    salt: Math.round(Date.now() / 1000),
-    targetChainId: targetNetworkNumber,
-    target: receiver,
-    permitSignature: signature
+  const domain: TypedDataDomain = {
+    name: 'Settlement',
+    version: '1.0',
+    // chainId: 17000,
+    verifyingContract: '0xF62849F9A0B5Bf2913b396098F7c7019b51A820a'
   };
-  console.log("contractParam: ", contractParam)
 
-  // Call the contract
-  const tx = await HUBSource.createOrder(contractParam);
-  const receipt = await tx.wait(); // Wait for the transaction to be mined
+  // The named list of all type definitions
+  const types = {
+    Order: [
+      { name: 'orderId', type: 'uint32' },
+      { name: 'maker', type: 'address' },
+      { name: 'taker', type: 'address' },
+      { name: 'inputToken', type: 'address' },
+      { name: 'inputAmount', type: 'uint256' },
+      { name: 'outputToken', type: 'address' },
+      { name: 'outputAmount', type: 'uint256' },
+      { name: 'expiry', type: 'uint256' },
+      { name: 'targetNetworkNumber', type: 'uint32' },
+    ]
+  };
 
-  const orderId = receipt.transactionHash
+  // const jsonRpcSigner: JsonRpcSigner = signer.connect(new JsonRpcProvider(targetNetworkNumber?.toString()))
+  // jsonRpcSigner._signTypedData(domain, types, value);
+
+  // if (allowsOffchainSigning) {
+  //   const signedOrderInfo = await OrderSigningUtils.signOrder(unsignedOrder, chainId, signer)
+  //   signingScheme =
+  //     signedOrderInfo.signingScheme === EcdsaSigningScheme.ETHSIGN ? SigningScheme.ETHSIGN : SigningScheme.EIP712
+  //   signature = signedOrderInfo.signature
+  // } else {
+  //   signingScheme = SigningScheme.PRESIGN
+  //   signature = account
+  // }
+
+
+  // Call API
+  let orderId = await orderBookApi.sendOrder(
+    {
+      ...unsignedOrder,
+      from: account,
+      receiver,
+      signingScheme,
+      // Include the signature
+      // signature,
+      targetNetworkNumber,
+      appData: appData.fullAppData, // We sign the keccak256 hash, but we send the API the full appData string
+      appDataHash: appData.appDataKeccak256,
+    },
+    { chainId }
+  )
+  orderId = Number(orderId)
+
+  // The data to sign
+  const value = {
+    orderId: orderId,
+    maker: account,
+    taker: unsignedOrder.receiver,
+    inputToken: unsignedOrder.buyToken,
+    inputAmount: unsignedOrder.buyAmount,
+    outputToken: unsignedOrder.sellToken,
+    outputAmount: unsignedOrder.sellAmount,
+    expiry: unsignedOrder.validTo,
+    targetNetworkNumber: targetNetworkNumber,
+  };
+
+  signature = await signer._signTypedData(domain, types, value);
+  signingScheme = SigningScheme.EIP712
+  if (!signature) throw new Error('Signature is undefined!')
+
+  await orderBookApi.updateOrder(
+    {
+      orderId,
+      signature,
+    },
+    { chainId }
+  )
 
   const pendingOrderParams: Order = mapUnsignedOrderToOrder({
     unsignedOrder,
-    additionalParams: { ...params, orderId, summary, signature },
+    additionalParams: {
+      ...params,
+      orderId,
+      summary,
+      signature
+    },
   })
 
   return {
@@ -293,4 +342,16 @@ export async function hasTrades(chainId: ChainId, address: string): Promise<bool
   const [trades, profileData] = await Promise.all([getTrades(chainId, address), getProfileData(chainId, address)])
 
   return trades.length > 0 || (profileData?.totalTrades ?? 0) > 0
+}
+
+async function wrapErrorInOperatorError<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn()
+  } catch (e) {
+    // In case it's an orderbook error, wrap it in an OperatorError
+    if (getIsOrderBookTypedError(e)) {
+      throw new OperatorError(e.body as ApiErrorObject)
+    }
+    throw e
+  }
 }

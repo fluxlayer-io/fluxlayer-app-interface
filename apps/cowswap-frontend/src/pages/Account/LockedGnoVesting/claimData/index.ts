@@ -1,3 +1,4 @@
+// import { Honeyswap } from '@cowprotocol/assets/cow-swap/ammslogo/honeyswap.png';
 import { SupportedChainId } from 'ccip-sdk'
 
 import gnosisChainIndex from './gnosisChain.json'
@@ -19,6 +20,7 @@ const indexFiles = {
   [SupportedChainId.POLYZK_TESTNET]: goerliIndex,
   [SupportedChainId.SEPOLIA]: goerliIndex,
   [SupportedChainId.OP_TESTNET]: goerliIndex,
+  [SupportedChainId.HOLESKY]: goerliIndex,
 }
 
 const chainNames = {
@@ -30,6 +32,7 @@ const chainNames = {
   [SupportedChainId.POLYZK_TESTNET]: 'polyzk',
   [SupportedChainId.SEPOLIA]: 'sep',
   [SupportedChainId.OP_TESTNET]: 'opsep',
+  [SupportedChainId.HOLESKY]: 'holesky',
 }
 
 const DISTRO_REPO_BRANCH_NAME = 'main'

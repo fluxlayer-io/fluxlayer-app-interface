@@ -193,6 +193,15 @@ export const USDC_OP_TESTNET = new TokenWithLogo(
   'USDC',
   'USD Coin'
 )
+
+export const USDC_HOLESKY = new TokenWithLogo(
+  USDC_MAINNET.logoURI,
+  SupportedChainId.HOLESKY,
+  '0xbe72E441BF55620febc26715db68d3494213D8Cb',
+  6,
+  'USDC',
+  'USD Coin'
+)
 // Goerli
 export const USDC_GOERLI = new TokenWithLogo(
   USDC_MAINNET.logoURI,
@@ -254,6 +263,7 @@ export const USDC: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI,
   [SupportedChainId.SEPOLIA]: USDC_SEPOLIA,
   [SupportedChainId.OP_TESTNET]: USDC_OP_TESTNET,
+  [SupportedChainId.HOLESKY]: USDC_HOLESKY,
 }
 
 export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedChainId]?: string } } = {
@@ -266,6 +276,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.POLYZK_TESTNET]: USDC_GOERLI.address,
     [SupportedChainId.SEPOLIA]: USDC_SEPOLIA.address,
     [SupportedChainId.OP_TESTNET]: USDC_OP_TESTNET.address,
+    [SupportedChainId.HOLESKY]: USDC_HOLESKY.address,
   },
 }
 
@@ -308,6 +319,7 @@ export const V_COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.POLYZK_TESTNET]: V_COW_TOKEN_GOERLI,
   [SupportedChainId.SEPOLIA]: V_COW_TOKEN_GOERLI,
   [SupportedChainId.OP_TESTNET]: V_COW_TOKEN_GOERLI,
+  [SupportedChainId.HOLESKY]: V_COW_TOKEN_GOERLI,
 }
 
 /**
@@ -349,6 +361,7 @@ export const COW: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.POLYZK_TESTNET]: COW_TOKEN_GOERLI,
   [SupportedChainId.SEPOLIA]: COW_TOKEN_GOERLI,
   [SupportedChainId.OP_TESTNET]: COW_TOKEN_GOERLI,
+  [SupportedChainId.HOLESKY]: COW_TOKEN_GOERLI,
 }
 
 export const GNO: Record<SupportedChainId, TokenWithLogo> = {
@@ -360,6 +373,7 @@ export const GNO: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.POLYZK_TESTNET]: GNO_GOERLI,
   [SupportedChainId.SEPOLIA]: GNO_GOERLI,
   [SupportedChainId.OP_TESTNET]: GNO_GOERLI,
+  [SupportedChainId.HOLESKY]: GNO_GOERLI,
 }
 
 export const EURE_GNOSIS_CHAIN = new TokenWithLogo(

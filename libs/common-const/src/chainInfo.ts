@@ -7,6 +7,7 @@ import EthereumLogo from '@cowprotocol/assets/cow-swap/network-mainnet-logo.svg'
 import AvalancheLogo from '@cowprotocol/assets/cow-swap/network-avalanche-logo.svg'
 import MumbaiLogo from '@cowprotocol/assets/cow-swap/network-mumbai-logo.svg'
 import OptimismLogo from '@cowprotocol/assets/cow-swap/optimism-ethereum-op-logo.svg'
+import HoleskyLogo from '@cowprotocol/assets/cow-swap/holesky-logo.svg'
 
 export enum NetworkType {
   L1,
@@ -127,6 +128,17 @@ export const CHAIN_INFO: ChainInfoMap = {
     name: 'op_testnet',
     explorerTitle: 'optimismscan',
     logoUrl: OptimismLogo,
+    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  },
+  [SupportedChainId.HOLESKY]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.cow.fi/',
+    explorer: 'https://holesky.etherscan.io/',
+    infoLink: COW_PROTOCOL_LINK,
+    label: 'Holesky',
+    name: 'holesky',
+    explorerTitle: 'Etherscan',
+    logoUrl: HoleskyLogo,
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   },
 }

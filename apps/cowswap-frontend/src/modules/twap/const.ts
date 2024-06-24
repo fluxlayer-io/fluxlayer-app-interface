@@ -36,6 +36,7 @@ export const TWAP_HANDLER_ADDRESS: Record<SupportedChainId, string> = {
   80001: twapHandlerAddress,
   11155111: twapHandlerAddress,
   11155420: twapHandlerAddress,
+  17000: twapHandlerAddress,
 }
 
 export const TWAP_PENDING_STATUSES = [TwapOrderStatus.WaitSigning, TwapOrderStatus.Pending, TwapOrderStatus.Cancelling]
@@ -51,6 +52,7 @@ export const MINIMUM_PART_SELL_AMOUNT_FIAT: Record<SupportedChainId, CurrencyAmo
   [SupportedChainId.POLYZK_TESTNET]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
   [SupportedChainId.SEPOLIA]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
   [SupportedChainId.OP_TESTNET]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
+  [SupportedChainId.HOLESKY]: CurrencyAmount.fromRawAmount(USDC[SupportedChainId.GOERLI], 100e6), // 100
 }
 
 export const MINIMUM_PART_TIME = ms`5min` / 1000 // in seconds

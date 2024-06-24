@@ -19,6 +19,7 @@ function getPriceStrategyUrl(): Record<SupportedChainId, string> {
     [SupportedChainId.POLYZK_TESTNET]: url + '/strategy-1442.json',
     [SupportedChainId.SEPOLIA]: url + '/strategy-11155111.json',
     [SupportedChainId.OP_TESTNET]: url + '/strategy-11155420.json',
+    [SupportedChainId.HOLESKY]: url + '/strategy-17000.json',
   }
 }
 

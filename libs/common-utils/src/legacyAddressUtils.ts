@@ -67,6 +67,7 @@ const ETHERSCAN_URLS: { [chainId in ChainId]: string } = {
   43113: 'testnet.snowtrace.io',
   11155111: 'sepolia.etherscan.io/',
   11155420: 'sepolia-optimism.etherscan.io/',
+  17000: 'holesky.etherscan.io/',
 }
 
 export type BlockExplorerLinkType =

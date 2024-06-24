@@ -73,6 +73,14 @@ export const WETH_OP_TESTNET = new TokenWithLogo(
   'WETH',
   'Wrapped Ether'
 )
+export const WETH_HOLESKY = new TokenWithLogo(
+  WETH_MAINNET.logoURI,
+  ChainId.HOLESKY,
+  '0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
 export const WRAPPED_NATIVE_CURRENCY: Record<SupportedChainId, TokenWithLogo> = {
   [SupportedChainId.MAINNET]: WETH_MAINNET,
   [SupportedChainId.GNOSIS_CHAIN]: WXDAI,
@@ -82,6 +90,7 @@ export const WRAPPED_NATIVE_CURRENCY: Record<SupportedChainId, TokenWithLogo> = 
   [SupportedChainId.POLYZK_TESTNET]: WETH_POLYZKTESTNET,
   [SupportedChainId.SEPOLIA]: WETH_SEPOLIA,
   [SupportedChainId.OP_TESTNET]: WETH_OP_TESTNET,
+  [SupportedChainId.HOLESKY]: WETH_HOLESKY,
 }
 
 export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } = {
@@ -99,5 +108,6 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId]: TokenWithLogo } 
   [ChainId.FUJI]: WAVAX_FUJI,
   [ChainId.POLYZK_TESTNET]: WETH_POLYZKTESTNET,
   [ChainId.SEPOLIA]: WETH_SEPOLIA,
-  [ChainId.OP_TESTNET]: WETH_OP_TESTNET
+  [ChainId.OP_TESTNET]: WETH_OP_TESTNET,
+  [ChainId.HOLESKY]: WETH_HOLESKY,
 }

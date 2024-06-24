@@ -25,6 +25,8 @@ import {
   LINK_SEPOLIA,
   USDC_OP_TESTNET,
   LINK_OP_TESTNET,
+  USDC_HOLESKY,
+  WETH_HOLESKY,
 } from '@cowprotocol/common-const'
 
 const tokensListToMap = (list: TokenWithLogo[]) =>
@@ -60,8 +62,8 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
   [SupportedChainId.GOERLI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.GOERLI],
     COW[SupportedChainId.GOERLI],
+    WETH_GOERLI,
     USDC_GOERLI,
-    LINK_GOERLI
   ]),
   [SupportedChainId.FUJI]: tokensListToMap([
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.FUJI],
@@ -92,5 +94,11 @@ export const DEFAULT_FAVOURITE_TOKENS: Record<SupportedChainId, TokensMap> = {
     COW[SupportedChainId.OP_TESTNET],
     LINK_OP_TESTNET,
     USDC_OP_TESTNET,
+  ]),
+  [SupportedChainId.HOLESKY]: tokensListToMap([
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.HOLESKY],
+    COW[SupportedChainId.HOLESKY],
+    WETH_HOLESKY,
+    USDC_HOLESKY,
   ]),
 }

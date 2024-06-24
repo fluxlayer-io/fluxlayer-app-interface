@@ -25,6 +25,8 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
       return [RPC_URLS[chainId]]
     case SupportedChainId.GNOSIS_CHAIN:
       return ['https://rpc.gnosischain.com/']
+    case SupportedChainId.HOLESKY:
+      return [RPC_URLS[chainId]]
     default:
   }
   // Our API-keyed URLs will fail security checks when used with external wallets.

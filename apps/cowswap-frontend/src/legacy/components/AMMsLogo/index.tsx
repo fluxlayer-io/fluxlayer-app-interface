@@ -130,6 +130,15 @@ const LogosPerNetwork: Record<SupportedChainId, Array<Image>> = {
     ElkImage,
     LevinSwapImage,
   ],
+  [SupportedChainId.HOLESKY]: [
+    SushiImage,
+    BaoSwapImage,
+    HoneySwapImage,
+    SwaprImage,
+    SymmetricImage,
+    ElkImage,
+    LevinSwapImage,
+  ],
 }
 
 export function AMMsLogo({ chainId }: { chainId: SupportedChainId }) {

@@ -21,6 +21,7 @@ export const COINGECK_PLATFORMS: Record<SupportedChainId, string | null> = {
   [SupportedChainId.POLYZK_TESTNET]: null,
   [SupportedChainId.SEPOLIA]: null,
   [SupportedChainId.OP_TESTNET]: null,
+  [SupportedChainId.HOLESKY]: null,
 }
 
 const BASE_URL = 'https://api.coingecko.com/api/v3/simple/token_price'

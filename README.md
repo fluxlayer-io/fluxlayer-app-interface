@@ -1,4 +1,4 @@
-# Run CCIP Swap
+# Install
 
 First install Dependencies:
 
@@ -27,8 +27,3 @@ yarn build
 ```bash
 yarn test
 ```
-
-# Deployment
-
-[Vercel](https://comet-swap.vercel.app/)
-[Fleek](https://orange-shadow-8231.on.fleek.co/)

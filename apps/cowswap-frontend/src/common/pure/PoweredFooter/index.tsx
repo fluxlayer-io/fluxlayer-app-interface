@@ -40,7 +40,7 @@ export function PoweredFooter() {
     <Wrapper>
       <StyledExternalLink href={COW_PROTOCOL_LINK}>
         <SVG src={fluxlayerIcon} title="fluxlayer" />
-        <Trans>Powered by CCIP Swap</Trans>
+        <Trans>Powered by FluxLayer</Trans>
       </StyledExternalLink>
     </Wrapper>
   )

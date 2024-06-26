@@ -12,13 +12,15 @@ import { getDefaultTradeRawState } from 'modules/trade/types/TradeRawState'
 import { parameterizeTradeRoute } from 'modules/trade/utils/parameterizeTradeRoute'
 
 import { Routes } from 'common/constants/routes'
+import { RedirectToPath } from 'legacy/pages/Swap/redirects'
 
 export function SwapPage() {
   const params = useParams()
   const slippage = useSwapSlippage()
 
   if (!params.chainId) {
-    return <SwapPageRedirect />
+    // return <SwapPageRedirect />
+    return <RedirectToPath path={'/limit'} />
   }
 
   return (

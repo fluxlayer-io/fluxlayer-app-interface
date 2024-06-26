@@ -117,9 +117,7 @@ export default function Header() {
             {!isChainIdUnsupported && (
               <CowBalanceButton
                 onClick={() => {
-                  if (1 === 0) {
-                    navigate('/account')
-                  }
+                  // navigate('/account')
                 }}
                 account={account}
                 chainId={chainId}

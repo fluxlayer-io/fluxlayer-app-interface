@@ -116,7 +116,9 @@ export default function Header() {
           <HeaderElement>
             {!isChainIdUnsupported && (
               <CowBalanceButton
-                onClick={() => navigate('/account')}
+                onClick={() => {
+                  // navigate('/account')
+                }}
                 account={account}
                 chainId={chainId}
                 isUpToSmall={isUpToSmall}

@@ -219,7 +219,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   const domain: TypedDataDomain = {
     name: 'Settlement',
     version: '1.0',
-    // chainId: 17000,
+    chainId: chainId,
     verifyingContract: '0xF62849F9A0B5Bf2913b396098F7c7019b51A820a'
   };
 

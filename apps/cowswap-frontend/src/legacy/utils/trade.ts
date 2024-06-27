@@ -3,6 +3,7 @@ import { isAddress, shortenAddress, formatTokenAmount, formatSymbol, getIsNative
 import { Signer, TypedDataDomain } from "@ethersproject/abstract-signer";
 import { JsonRpcSigner } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { constants } from 'ethers';
 
 import {
   EcdsaSigningScheme,
@@ -217,10 +218,10 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   let signature = ''
 
   const domain: TypedDataDomain = {
-    name: 'Settlement',
+    name: 'OrderBook',
     version: '1.0',
     chainId: chainId,
-    verifyingContract: '0xF62849F9A0B5Bf2913b396098F7c7019b51A820a'
+    verifyingContract: '0x6D26A188C826Af13fF97C8cB70245676af187a2F'
   };
 
   // The named list of all type definitions
@@ -258,7 +259,7 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
     {
       ...unsignedOrder,
       from: account,
-      receiver,
+      receiver: constants.AddressZero,
       signingScheme,
       // Include the signature
       // signature,
@@ -274,11 +275,12 @@ export async function signAndPostOrder(params: PostOrderParams): Promise<AddUnse
   const value = {
     orderId: orderId,
     maker: account,
-    taker: unsignedOrder.receiver,
-    inputToken: unsignedOrder.buyToken,
-    inputAmount: unsignedOrder.buyAmount,
-    outputToken: unsignedOrder.sellToken,
-    outputAmount: unsignedOrder.sellAmount,
+    // taker: unsignedOrder.receiver,
+    taker: constants.AddressZero,
+    inputToken: unsignedOrder.sellToken,
+    inputAmount: unsignedOrder.sellAmount,
+    outputToken: unsignedOrder.buyToken,
+    outputAmount: unsignedOrder.buyAmount,
     expiry: unsignedOrder.validTo,
     targetNetworkNumber: targetNetworkNumber,
   };

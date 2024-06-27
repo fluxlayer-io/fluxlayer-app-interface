@@ -76,7 +76,7 @@ export const WETH_OP_TESTNET = new TokenWithLogo(
 export const WETH_HOLESKY = new TokenWithLogo(
   WETH_MAINNET.logoURI,
   ChainId.HOLESKY,
-  '0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa',
+  '0xC36E19B16c276D10BE40c7b9D3c026E8f482f2aD',
   18,
   'WETH',
   'Wrapped Ether'
